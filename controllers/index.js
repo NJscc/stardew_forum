@@ -4,13 +4,20 @@ const router = express.Router();
 const userRoutes = require("./userRoutes");
 router.use("/api/users",userRoutes)
 
-const blogRoutes = require("./blogRoutes");
-router.use("/api/blogs",blogRoutes)
+const postRoutes = require("./postRoutes");
+router.use("/api/posts",postRoutes)
 
-/*
+const topicRoutes = require("./topicRoutes");
+router.use("/api/topics",topicRoutes)
+
+const categoryRoutes = require("./categoryRoutes");
+router.use("/api/categories",categoryRoutes)
+
 const frontEnd = require("./frontEndRoutes");
 router.use("/",frontEnd)
 
+
+/*
 router.get("/showsessions",(req,res)=>{
     res.json(req.session)
 })
@@ -29,4 +36,4 @@ router.get("/secretclub",(req,res)=>{
 
 */
 
-//module.exports = router;
+module.exports = router;
