@@ -19,7 +19,7 @@ Topic.init({
     }, 
 
     text: {
-        type: DataTypes.text,
+        type: DataTypes.TEXT,
         allowNull: false  
     },
 
