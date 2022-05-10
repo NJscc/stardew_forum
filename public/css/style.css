@@ -365,4 +365,44 @@ ul {
 
 /*create topic*/
 
+#topicSubmission {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#topicTitle {
+    width: 30%;
+    height:40%;
+}
+
+#topicText {
+    width: 50%;
+    height:40%;
+}
+
+#submitTopicBtn {
+    
+}
+
 /*create post*/
+
+#postSubmission {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+#postText {
+    width: 50%;
+    height:40%;
+}
+
+#submitPostBtn {
+    
+}
