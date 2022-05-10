@@ -13,8 +13,8 @@ router.use("/api/topics",topicRoutes)
 // const categoryRoutes = require("./categoryRoutes");
 // router.use("/api/categories",categoryRoutes)
 
-// const frontEnd = require("./frontEndRoutes");
-// router.use("/",frontEnd)
+const frontEnd = require("./frontEndRoutes");
+router.use("/",frontEnd)
 
 
 module.exports = router;

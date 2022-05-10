@@ -26,11 +26,7 @@ User.init({
         validate: {
             len:[8]
         }
-    }, 
-
-    creation_date: {
-        type: DataTypes.DATE,
-    }
+    } 
 },
   {
     hooks:{
