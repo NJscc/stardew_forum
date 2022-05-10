@@ -348,3 +348,21 @@ ul {
 .rightProfileTitle {
     width: 100%;
 }
+
+/*add/edit profile page*/
+#profileSubmission {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#bioInput {
+    width: 50%;
+    height:40%;
+}
+
+/*create topic*/
+
+/*create post*/
