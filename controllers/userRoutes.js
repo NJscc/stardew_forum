@@ -15,6 +15,22 @@ router.get('/', async (req, res) => {
     }
   });
 
+  router.get("/logout",(req,res)=>{
+    req.session.destroy();
+    res.redirect("/")
+  })
+  //find one
+  router.get("/:id", (req, res) => {
+    User.findByPk(req.params.id,{})
+      .then(dbUser => {
+        res.json(dbUser);
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json({ msg: "an error occured", err });
+      });
+  });
+
   //create a user
   router.post("/", (req, res) => {
     User.create(req.body)
@@ -31,6 +47,30 @@ router.get('/', async (req, res) => {
       });
   });
 
+  router.post("/login", (req, res) => {
+    User.findOne({
+      where:{
+      username:req.body.username
+    }
+  }).then(foundUser=>{
+      if(!foundUser){
+        return res.status(400).json({msg:"wrong login credentials"})
+      }
+      if(bcrypt.compareSync(req.body.password,foundUser.password)){
+        req.session.user = {
+          id:foundUser.id,
+          username:foundUser.username
+        }
+        return res.json(foundUser)
+      } else {
+        return res.status(400).json({msg:"wrong login credentials"})
+      }
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json({ msg: "an error occured", err });
+      });
+  });
+  
   //should we update with id or a unique user name? 
 
   router.put("/:id", (req, res) => {

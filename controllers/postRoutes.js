@@ -4,7 +4,9 @@ const {User,Post,Topic} = require("../models");
 
 router.get('/', async (req, res) => {
     try {
-      const postData = await Post.findAll();
+      const postData = await Post.findAll({
+        include: [{model: User}]
+      });
       res.status(200).json(postData);
     } catch (err) {
       res.status(500).json({ msg: "an error occured", err });
