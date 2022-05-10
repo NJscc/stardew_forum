@@ -388,3 +388,21 @@ ul {
 }
 
 /*create post*/
+
+#postSubmission {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+#postText {
+    width: 50%;
+    height:40%;
+}
+
+#submitPostBtn {
+    
+}
