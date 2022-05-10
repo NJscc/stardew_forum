@@ -230,6 +230,24 @@ ul {
 
 /*Posts Page*/
 
+#createPost {
+    font-size: 25px;
+    width: 20%;
+    display: flex;
+    flex-shrink: 1;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.postText {
+    width: 70%;
+    background-color: var(--body-color);
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    margin-right: 5%;
+}
+
 /*Profile Page*/
 
 /*Login Page*/
