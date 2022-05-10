@@ -10,8 +10,8 @@ router.use("/api/posts",postRoutes)
 const topicRoutes = require("./topicRoutes");
 router.use("/api/topics",topicRoutes)
 
-// const categoryRoutes = require("./categoryRoutes");
-// router.use("/api/categories",categoryRoutes)
+const categoryRoutes = require("./categoryRoutes");
+router.use("/api/categories",categoryRoutes)
 
 const frontEnd = require("./frontEndRoutes");
 router.use("/",frontEnd)
