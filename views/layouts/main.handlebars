@@ -17,15 +17,15 @@
     <!--Main Page - handles content to be displayed on ANY page generated-->
     <!--Header-->
     <header>
-        <h1>Stardew Forum</h1>
+        <a href= "/"><h1>Stardew Forum</h1></a>
         <div id="buttons">
 
         {{#if loggedIn}}
         <a href="/profile"><button>profile</button></a>
-        <button id="logoutBtn">Logout</button>
+        <a href="/api/users/logout"><button id="logoutBtn">Logout</button></a>
         {{else}}
-            <button type="button" id="loginBtn">Login!</button>
-            <button type="button" id="signupBtn">Sign up!</button>
+            <a href= "/login"><button type="button" id="loginBtn">Login!</button></a>
+             <a href= "/login"><button type="button" id="signupBtn">Sign up!</button></a>
         {{/if}}
             
         </div>
