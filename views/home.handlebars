@@ -5,7 +5,7 @@
                 <h2 class="leftTitle">Recent</h2>
                 <div class="leftList">
                     <ul>
-                        <!--Needs code to fill elements-->
+                        <!--Needs code to fill post elements-->
                         <li>Placeholder1</li>
                         <li>Placeholder2</li>
                         <li>Placeholder3</li>
@@ -15,11 +15,11 @@
             <div class="displayBlockRight">
                     <h2 class="rightTitle">Categories</h2>
                 <div class="rightList">
-                    <ul>
-                        <li>Example1</li>
-                        <li>Example2</li>
-                        <li>Example3</li>
-                    </ul>
+                    <div class="category_list">
+                        {{#each categories as |category|}}
+                            <a href= ""><h3>{{category.title}}</h3></a>
+                        {{/each}}
+                    </div>
                 </div>
             </div>
         </div>

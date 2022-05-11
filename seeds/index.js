@@ -2,7 +2,7 @@ const sequelize = require("../config/connection")
 const {User,Post,Category,Topic} = require("../models")
 
 
-const categories = [
+const category = [
     {
         title: "Game Discussion"
     },
@@ -41,8 +41,8 @@ const topics = [
 const feedSeed = async () => {
     await sequelize.sync({force:true})
     try{
-        await Category.bulkCreate(categories);
-        await Topic.bulkCreate(topics);
+        await sequelize.sync({force:true})
+        await Category.bulkCreate(category);
         process.exit(0);
     } catch (err){
         console.log(err);
