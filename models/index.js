@@ -3,7 +3,7 @@ const Post = require("./Post");
 const Topic = require("./Topic");
 const Category = require("./Category");
 
-User.hasMany(Post),
+User.hasMany(Post,{foreignKey: "user_id"}),
 Post.belongsTo(User),
 
 User.hasMany(Topic),
