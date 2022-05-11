@@ -22,7 +22,7 @@
 
         {{#if loggedIn}}
         <a href="/profile"><button>profile</button></a>
-        <button id="logoutBtn">Logout</button>
+        <a href="/api/users/logout"><button id=logoutBtn>Logout</button></a>
         {{else}}
             <button type="button" id="loginBtn">Login!</button>
             <button type="button" id="signupBtn">Sign up!</button>
