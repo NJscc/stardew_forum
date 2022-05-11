@@ -18,3 +18,17 @@ router.get('/', async (req, res) => {
 
   module.exports = router;
   
+//find by id
+
+router.get("/:id", (req, res) => {
+  Category.findByPk(req.params.id,{
+    include: [{model: Topic}]
+  })
+    .then(categoryData => {
+      res.json(categoryData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json({ msg: "an error occured", err });
+    });
+});
