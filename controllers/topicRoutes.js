@@ -22,6 +22,20 @@ router.get("/:id", (req, res) => {
       });
   });
 
+  router.post("/", (req, res) => {
+    Topic.create(req.body)
+      .then(newTopic => {
+        req.session.user = {
+          title:newTopic.title,
+          text:newTopic.text,
+        }
+        res.json(newTopic);
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json({ msg: "an error occured", err });
+      });
+  });
 
   //only owner of that topic should be able to delete
   router.put("/:id", (req, res) => {

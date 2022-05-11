@@ -26,7 +26,18 @@ User.init({
         validate: {
             len:[8]
         }
-    } 
+    },
+
+        user_avatar: {
+        type: DataTypes.STRING,
+        Unique: true
+    },
+    
+        user_bio: {
+        type: DataTypes.STRING,
+        Unique: true
+    }
+
 },
   {
     hooks:{
