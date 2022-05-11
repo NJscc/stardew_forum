@@ -19,15 +19,22 @@
     <header>
         <h1>Stardew Forum</h1>
         <div id="buttons">
+
+        {{#if loggedIn}}
+        <a href="/profile"><button>profile</button></a>
+        <button id="logoutBtn">Logout</button>
+        {{else}}
             <button type="button" id="loginBtn">Login!</button>
             <button type="button" id="signupBtn">Sign up!</button>
+        {{/if}}
+            
         </div>
     </header>
 
     <!--check breadcrumb on bootstrap-->
 
 
-    <!--{{{body}}}-->
+    {{{body}}}
     
 
     <footer>

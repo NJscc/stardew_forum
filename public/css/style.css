@@ -250,14 +250,16 @@ ul {
 
 /*Profile Page*/
 
-.displayBlockLeft {
+
+.displayProfileBlockLeft {
     display: flex;
     flex-direction: column;
     width: 65%;
     align-items: center;
 }
 
-.displayBlockRight {
+
+.displayProfileBlockRight {
     display: flex;
     flex-direction: column;
     width: 35%;
@@ -340,7 +342,67 @@ ul {
 #newBioBtn {
 
 }
-
 /*Login Page*/
 
 /*Signup Page*/
+.rightProfileTitle {
+    width: 100%;
+}
+
+/*add/edit profile page*/
+#profileSubmission {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#bioInput {
+    width: 50%;
+    height:40%;
+}
+
+/*create topic*/
+
+#topicSubmission {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#topicTitle {
+    width: 30%;
+    height:40%;
+}
+
+#topicText {
+    width: 50%;
+    height:40%;
+}
+
+#submitTopicBtn {
+    
+}
+
+/*create post*/
+
+#postSubmission {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+#postText {
+    width: 50%;
+    height:40%;
+}
+
+#submitPostBtn {
+    
+}
