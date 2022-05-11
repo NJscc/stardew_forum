@@ -16,5 +16,8 @@ router.use("/api/categories",categoryRoutes)
 const frontEnd = require("./frontEndRoutes");
 router.use("/",frontEnd)
 
+router.get("/showsessions",(req,res)=>{
+    res.json(req.session)
+})
 
 module.exports = router;
