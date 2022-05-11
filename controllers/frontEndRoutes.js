@@ -2,13 +2,20 @@ const express = require('express');
 const router = express.Router();
 const {User,Post, Category} = require('../models');
 
-router.get("/",(req,res)=>{
-    Post.findAll().then(posts=>{
-        const hbsposts = posts.map(post=>post.get({plain:true}))
+router.get("/",async (req,res)=>{
+   let allPosts = await Post.findAll()
+        const hbsposts = allPosts.map(post=>post.get({plain:true}))
         console.log(hbsposts)
         const loggedIn = req.session.user?true:false
-        res.render("home",{posts:hbsposts,loggedIn,username:req.session.user?.username})
-    })
+    
+    const forumCategory = await Category.findAll()
+         const cathbs = forumCategory.map(category => category.get({plain:true}))
+        console.log(cathbs);
+    res.render("home",{
+        categories:cathbs,
+        posts:hbsposts,
+        loggedIn,
+        username:req.session.user?.username})
 })
 
 router.get("/login",(req,res)=>{
