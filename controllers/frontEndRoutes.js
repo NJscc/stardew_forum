@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {User,Post, Category} = require('../models');
+const {User,Post, Category, Topic} = require('../models');
 
 router.get("/",async (req,res)=>{
    let allPosts = await Post.findAll()
@@ -9,13 +9,32 @@ router.get("/",async (req,res)=>{
         const loggedIn = req.session.user?true:false
     
     const forumCategory = await Category.findAll()
-         const cathbs = forumCategory.map(category => category.get({plain:true}))
+        const cathbs = forumCategory.map(category => category.get({plain:true}))
         console.log(cathbs);
     res.render("home",{
         categories:cathbs,
         posts:hbsposts,
         loggedIn,
-        username:req.session.user?.username})
+        username:req.session.user?.username
+    })
+})
+
+router.get("/categories/:id", async (req,res) => {
+    const oneCategory = await Category.findByPk(req.params.id)
+    const loggedIn = req.session.user?true:false
+    const hbtopic = await Topic.findAll({
+        where: {
+            category_id: req.params.id
+        }
+    })
+        console.log(oneCategory)
+        console.log(hbtopic)
+    res.render("topics",{
+        category_title: oneCategory.dataValues.title,
+        topics: hbtopic,
+        loggedIn,
+        username:req.session.user?.username
+    })    
 })
 
 router.get("/login",(req,res)=>{
