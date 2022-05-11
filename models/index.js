@@ -10,6 +10,7 @@ User.hasMany(Topic),
 Topic.belongsTo(User),
 
 Category.hasMany(Post),
+Category.hasMany(Topic,{foreignKey: "category_id"});
 Post.belongsTo(Category),
 
 Topic.hasMany(Post),
