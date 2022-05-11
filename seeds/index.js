@@ -21,6 +21,7 @@ const categories = [
 
 const feedSeed = async () => {
     try{
+        await sequelize.sync({force:true})
         await Category.bulkCreate(categories);
         process.exit(0);
     } catch (err){

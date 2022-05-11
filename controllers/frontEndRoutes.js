@@ -24,7 +24,7 @@ router.get("/profile",(req,res)=>{
         return res.redirect("/login")
     }
     User.findByPk(req.session.user.id,{
-        include:[post]
+        include:[Post]
     }).then(userData=>{
         console.log(userData);
         const hbsData = userData.get({plain:true})
