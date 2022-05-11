@@ -15,13 +15,11 @@
             <div class="displayBlockRight">
                     <h2 class="rightTitle">Categories</h2>
                 <div class="rightList">
-                    <ul>
-                        <a href=""><li>Game Discussion</li></a> 
-                        <a href=""><li>Guide and Resources</li></a> 
-                        <a href=""><li>Questions</li></a>
-                        <a href=""><li>Modding</li></a>
-                        <a href=""><li>Bugs</li></a>
-                    </ul>
+                    <div class="category_list">
+                        {{#each categories as |category|}}
+                            <a href= ""><h3>{{category.title}}</h3></a>
+                        {{/each}}
+                    </div>
                 </div>
             </div>
         </div>
