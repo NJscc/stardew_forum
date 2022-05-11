@@ -20,7 +20,7 @@ const category = [
     },
 ]
 
-const topics = [
+const topic = [
     {
         title: "Favorite Villagers",
         text: "this is text content",
@@ -41,8 +41,8 @@ const topics = [
 const feedSeed = async () => {
     await sequelize.sync({force:true})
     try{
-        await sequelize.sync({force:true})
         await Category.bulkCreate(category);
+        await Topic.bulkCreate(topic);
         process.exit(0);
     } catch (err){
         console.log(err);
