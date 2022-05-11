@@ -24,6 +24,35 @@ router.get("/:id", (req, res) => {
       });
   });
 
+  // router.post("/", (req, res) => {
+  //   Post.create(req.session.user.post)
+  //     .then(newPost => {
+  //         text:newPost.text,
+  //         user_id:req.session.user,
+  //         title_id:newPost.title_id
+  //     }
+  //       res.json(newPost);
+  //   })
+  //     .catch(err => {
+  //       console.log(err);
+  //       res.status(500).json({ msg: "an error occured", err });
+  //     });
+  // });
+
+  // router.post('/', async (req, res) => {
+  //   try {
+  //     const newpostData = await Post.create({
+  //       text: req.body.text,
+  //       user_id: req.session.user.user_id,
+  //       title_id:req.body.title_id
+  //     });
+  //     res.status(200).json(newpostData);
+  //   } catch (err) {
+  //     res.status(400).json(err);
+  //   }
+  // });
+
+
   router.put("/:id", (req, res) => {
     Post.update(req.body, {
       where: {
