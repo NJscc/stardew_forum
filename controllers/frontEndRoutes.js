@@ -4,7 +4,6 @@ const {User,Post, Category} = require('../models');
 
 router.get("/",(req,res)=>{
     Post.findAll().then(posts=>{
-        console.log(posts)
         const hbsposts = posts.map(post=>post.get({plain:true}))
         console.log(hbsposts)
         const loggedIn = req.session.user?true:false
@@ -24,7 +23,7 @@ router.get("/profile",(req,res)=>{
         return res.redirect("/login")
     }
     User.findByPk(req.session.user.id,{
-        include:[post]
+        include:[Post]
     }).then(userData=>{
         console.log(userData);
         const hbsData = userData.get({plain:true})
