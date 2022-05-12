@@ -12,7 +12,9 @@ router.get('/', async (req, res) => {
 });
 
 router.get("/:id", (req, res) => {
-    Topic.findByPk(req.params.id,{})
+    Topic.findByPk(req.params.id,{
+      include: [{model: Post}]
+    })
       .then(topicData => {
         res.json(topicData);
       })
