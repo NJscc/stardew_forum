@@ -28,12 +28,12 @@ User.init({
         }
     },
 
-        user_avatar: {
+    user_avatar: {
         type: DataTypes.STRING,
         Unique: true
     },
     
-        user_bio: {
+    user_bio: {
         type: DataTypes.STRING,
         Unique: true
     }
