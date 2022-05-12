@@ -20,20 +20,29 @@ router.get("/",async (req,res)=>{
 })
 
 router.get("/categories/:id", async (req,res) => {
-    const oneCategory = await Category.findByPk(req.params.id)
-    const loggedIn = req.session.user?true:false
+    const oneCategory = await Category.findByPk(req.params.id);
+    
+    const allCategories = await Category.findAll()
+        const allCategoriesHbs = allCategories.map(category => category.get({plain:true})) 
+    
+        const loggedIn = req.session.user?true:false
     const hbtopic = await Topic.findAll({
         where: {
             category_id: req.params.id
         }
     })
+        console.log(allCategories)
+        console.log("???????????")
+        console.log(allCategoriesHbs)
+        console.log("#########")
         console.log(oneCategory)
         console.log(hbtopic)
     res.render("topics",{
         category_title: oneCategory.dataValues.title,
         topics: hbtopic,
+        categories:allCategoriesHbs,
         loggedIn,
-        username:req.session.user?.username
+        username:req.session.user?.username    
     })    
 })
 
@@ -96,11 +105,30 @@ router.get("/profile/:id",(req,res)=>{
             userName: hbsData.username,
             selfProfile: selfProfile,
             loggedIn: loggedIn,
-            imageUrl: hbsData.user_avatar
+            imageUrl: hbsData.user_avatar,
+            userpost: hbsData.posts
         })
     })
 })
 
+/* go to submit post page*/
+router.get("/submitpost",async (req,res)=>{
+    let allPosts = await Post.findAll()
+         const hbsposts = allPosts.map(post=>post.get({plain:true}))
+         console.log(hbsposts)
+         const loggedIn = req.session.user?true:false
+     
+     const forumCategory = await Category.findAll()
+         const cathbs = forumCategory.map(category => category.get({plain:true}))
+         console.log(cathbs);
+     res.render("submit_post",{
+         categories:cathbs,
+         posts:hbsposts,
+         loggedIn,
+         username:req.session.user?.username
+     })
+ })
+ 
 // go to profile editor page
 router.get("/profileEditor", (req,res) => {
     if(!req.session.user){

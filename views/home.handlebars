@@ -4,12 +4,11 @@
             <div class="displayBlockLeft">
                 <h2 class="leftTitle">Recent</h2>
                 <div class="leftList">
-                    <ul>
-                        <!--Needs code to fill post elements-->
-                        <li>Placeholder1</li>
-                        <li>Placeholder2</li>
-                        <li>Placeholder3</li>
-                    </ul>
+                    <div class="posts_list">
+                        {{#each posts as |post|}}
+                            <a href= "/posts/{{id}}"><h3>{{post.text}}</h3></a>
+                        {{/each}}
+                    </div>
                 </div>
             </div>
             <div class="displayBlockRight">
