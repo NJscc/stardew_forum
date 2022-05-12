@@ -35,7 +35,9 @@
 
 ## Link to Deployed Application and GitHub repository
 
-    
+    GitHub repository: https://github.com/NJscc/stardew_forum
+
+    Deployed link: https://stardew-forum-project.herokuapp.com/
     
  ## Screenshot  
 
