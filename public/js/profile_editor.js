@@ -1,7 +1,7 @@
 document.querySelector("#submitBioBtn").addEventListener("submit",e=>{
     e.preventDefault();
 
-    console.log("clientside");
+
     const userObj = {
         name:document.querySelector("#userNameInput").value,
         bio:document.querySelector("#bioInput").value,
@@ -25,10 +25,6 @@ document.querySelector("#submitBioBtn").addEventListener("submit",e=>{
     console.log(userObj);
 })
 
-
-
-
-
 //Cloudinary Widget
 
 var myWidget = cloudinary.createUploadWidget({
@@ -42,6 +38,9 @@ var myWidget = cloudinary.createUploadWidget({
         "image_search",
         "google_drive"
     ],
+    showAdvancedOptions: false,
+    cropping: true,
+    multiple: false,
     styles: {
         palette: {
             window: "#151152",
@@ -65,7 +64,27 @@ var myWidget = cloudinary.createUploadWidget({
         //DELETE CONSOLE LOG LATER
         console.log('Done! Here is the image info: ', result.info);
 
-        document.getElementById('profileAvatar').setAttribute('src', result.info.url);
+        //${req.session.user.id}
+
+        fetch("/api/users/",{
+            method:"PUT",
+            body:JSON.stringify({
+                user_avatar:result.info.secure_url
+            }),
+            headers:{
+                "Content-Type":"application/json"
+            }
+        }).then(res=>{
+            if(res.ok){
+                console.log("submitUserChanges:" + res);
+                location.href = "/profile/-1";
+            } else {
+                alert("an error occured!")
+            }
+        })
+
+
+        document.getElementById('profileAvatar').setAttribute('src', result.info.secure_url);
     }
 })
 

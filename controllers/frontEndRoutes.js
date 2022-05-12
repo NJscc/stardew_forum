@@ -95,7 +95,8 @@ router.get("/profile/:id",(req,res)=>{
             userBio: hbsData.user_bio,
             userName: hbsData.username,
             selfProfile: selfProfile,
-            loggedIn: loggedIn
+            loggedIn: loggedIn,
+            imageUrl: hbsData.user_avatar
         })
     })
 })
@@ -124,7 +125,7 @@ router.post("/profile",(req,res)=>{
     User.update({
         username: req.body.name,
         user_bio:req.body.bio,
-        user_avatar:""
+        user_avatar:result.info.secure_url
     },
     {
         where: {
