@@ -6,11 +6,14 @@
                 <div class="profileItems"> 
                     <div id="userElements">
                         <img src="" alt="This will be the user's image" id="userPicture">
-                        <p id="userProfileText">{{}}</p>
+                        <p id="userProfileText"></p>
                     </div>
                     <div id="buttonBlock">
-                        <button id="newImageBtn">This will be for the user to submit an image.</button>
-                        <button id="newBioBtn">This will be for the user to submit a new biography.</button>
+                        <div id="userNameView">{{userName}} </div>
+                        <div id="userBioView">{{userBio}}</div>
+                        {{#if selfProfile}}
+                        <button id="editUserBtn">EDIT</button>
+                        {{/if}}
                     </div>
                 </div>
             </div>
@@ -32,3 +35,6 @@
         </div>
     
     </main>
+
+    <script src="/js/profile_viewer.js"></script>
+

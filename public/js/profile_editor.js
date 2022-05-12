@@ -1,10 +1,11 @@
 document.querySelector("#submitBioBtn").addEventListener("submit",e=>{
     e.preventDefault();
 
+    console.log("clientside");
     const userObj = {
         name:document.querySelector("#userNameInput").value,
         bio:document.querySelector("#bioInput").value,
-        avatar:document.querySelector("#userPicture").value,  
+        avatar:document.querySelector("#profileAvatar").value,  
         
     }
     fetch("/profile",{
@@ -15,13 +16,18 @@ document.querySelector("#submitBioBtn").addEventListener("submit",e=>{
         }
     }).then(res=>{
         if(res.ok){
-           location.reload()
+            console.log("submitUserChanges:" + res);
+            location.href = "/profile/-1";
         } else {
             alert("an error occured!")
         }
     })
     console.log(userObj);
 })
+
+
+
+
 
 //Cloudinary Widget
 
