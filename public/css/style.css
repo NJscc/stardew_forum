@@ -1,5 +1,5 @@
 :root {
-    --bg-color:#28ECF3;
+    --bg-color:#30a6f5;
     --titles-color:#F3CF28;
     --body-color:#F3EA28;
 
@@ -21,31 +21,32 @@ header {
     display: flex;
     background-color: var(--dark-purple);
     justify-content:center;
-    height: 110px;
     border-bottom-style: solid;
-    border-bottom-width: 6px;
-    border-color: black;
+    border-bottom-width: 20px;
+    border-color: var(--beige-color);
     margin-bottom: 40px;
 }
 
 /*link styling*/
-header a {
+
+#titleText {
     display: flex;
     margin: auto;
-    font-size: 140pt;
     font-family: sans-serif;
+    color: var(--yellow-color);
+    font-size: 80pt;
+}
+
+
+/* visited link */
+a:visited, a:active {
     color: var(--yellow-color);
 }
 
-/*unvisited*/
-a:link {
-    color: red;
-  }
+a:hover {
+    color: var(--beige-color);
+}
   
-  /* visited link */
-  a:visited {
-    color: green;
-  }
 
 header div {
     display: flex;
