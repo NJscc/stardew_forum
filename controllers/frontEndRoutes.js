@@ -37,6 +37,26 @@ router.get("/categories/:id", async (req,res) => {
     })    
 })
 
+router.get("/topics/:id", async (req,res) => {
+    const oneTopic = await Topic.findByPk(req.params.id)
+    const loggedIn = req.session.user?true:false
+    const hbpost = await Post.findAll({
+        where: {
+            topic_id: req.params.id
+        }
+    })
+        console.log(oneTopic)
+        console.log(hbpost)
+    res.render("posts",{
+        topic_title: oneTopic.dataValues.title,
+        topic_text: oneTopic.dataValues.text,
+        topics: oneTopic,
+        posts: hbpost,
+        loggedIn,
+        username:req.session.user?.username
+    })    
+})
+
 router.get("/login",(req,res)=>{
     if(req.session.user){
         return res.redirect("/profile/-1")
