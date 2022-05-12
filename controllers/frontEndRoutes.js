@@ -39,52 +39,75 @@ router.get("/categories/:id", async (req,res) => {
 
 router.get("/login",(req,res)=>{
     if(req.session.user){
-        return res.redirect("/profile")
+        return res.redirect("/profile/-1")
     }
     res.render("login")
 })
 
-router.get("/profile",(req,res)=>{
+// go to profile viewer page
+router.get("/profile/:id",(req,res)=>{
     if(!req.session.user){
         return res.redirect("/login")
     }
-    User.findByPk(req.session.user.id,{
+    let userId = req.session.user.id;
+
+    // if id is -1, show logged in user
+    if(req.params.id !=="-1" ){
+        userId = req.params.id;
+    }
+
+    User.findByPk(userId,{
         include:[Post]
     }).then(userData=>{
         console.log(userData);
         const hbsData = userData.get({plain:true})
         console.log("=======")
         console.log(hbsData);
-        hbsData.loggedIn = req.session.user?true:false
-        res.render("submit_profile",hbsData)
+        let selfProfile = (req.session.user.id == userId);
+        res.render("profile",{
+            userBio: hbsData.user_bio,
+            userName: hbsData.username,
+            selfProfile: selfProfile
+        })
     })
 })
 
-// router.get("/profile",(req,res)=>{
-//     if(!req.session.user){
-//         return res.redirect("/login")
-//     }
-//     User.findByPk(req.session.user.id)
-//     }).then(userData=>{
-//         console.log(userData);
-//         const hbsData = userData.get({plain:true})
-//         console.log(hbsData);
-//         hbsData.loggedIn = req.session.user?true:false
-//     }).then(
-//         Post.findByPk(req.params.id, {
-//             where: {
-//                 post_id: req.session.user_id
-//               }
-//         }
-//     ).then(postData=>{
-//         const hbsPostData = postData.get({plain:true})
-//         res.render("submit_profile",
-//         {
-//             post:hbsPostData,
-//             user:hbsData,
-//             //loggedIn,
-//             username:req.session.user?.username}
-//     )
-// }))
+// go to profile editor page
+router.get("/profileEditor", (req,res) => {
+    if(!req.session.user){
+        return res.redirect("/login");
+    }
+    User.findByPk(req.session.user.id)
+    .then(userData => {
+        const hbsData = userData.get({plain:true})
+        res.render("submit_profile", {
+            userBio: hbsData.user_bio,
+            userName: hbsData.username
+        })
+    })
+})
+
+//submit new user's data to backend
+router.post("/profile",(req,res)=>{
+    if(!req.session.user){
+        return res.redirect("/login")
+    }
+
+    User.update({
+        username: req.body.name,
+        user_bio:req.body.bio,
+        user_avatar:""
+    },
+    {
+        where: {
+            id:req.session.user.id
+        }
+    }
+    ).then(data => {
+        res.status(200).json(data);
+    })
+})
+
+        
 
 module.exports = router;

@@ -25,8 +25,17 @@ const topic = [
 const user = [
     {
         username: "oatmeal",
-        password: "password"
+        password: "password",
+        user_avatar:"",
+        user_bio:"hello world"
+    },
+    {
+        username: "seval",
+        password: "password2",
+        user_avatar:"",
+        user_bio:"hello world2"
     }
+
 ]
 const category = [
     {
