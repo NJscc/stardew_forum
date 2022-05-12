@@ -64,13 +64,20 @@ router.get("/login",(req,res)=>{
     res.render("login")
 })
 
+// router.get("/profile",(req,res)=>{
+//     if(req.session.user){
+//         return res.redirect("/profile/-1")
+//     }
+//     res.render("login")
+// })
+
 // go to profile viewer page
 router.get("/profile/:id",(req,res)=>{
     if(!req.session.user){
         return res.redirect("/login")
     }
     let userId = req.session.user.id;
-
+    const loggedIn = req.session.user?true:false
     // if id is -1, show logged in user
     if(req.params.id !=="-1" ){
         userId = req.params.id;
@@ -87,7 +94,8 @@ router.get("/profile/:id",(req,res)=>{
         res.render("profile",{
             userBio: hbsData.user_bio,
             userName: hbsData.username,
-            selfProfile: selfProfile
+            selfProfile: selfProfile,
+            loggedIn: loggedIn
         })
     })
 })
