@@ -105,11 +105,30 @@ router.get("/profile/:id",(req,res)=>{
             userName: hbsData.username,
             selfProfile: selfProfile,
             loggedIn: loggedIn,
-            imageUrl: hbsData.user_avatar
+            imageUrl: hbsData.user_avatar,
+            userpost: hbsData.posts
         })
     })
 })
 
+/* go to submit post page*/
+router.get("/submitpost",async (req,res)=>{
+    let allPosts = await Post.findAll()
+         const hbsposts = allPosts.map(post=>post.get({plain:true}))
+         console.log(hbsposts)
+         const loggedIn = req.session.user?true:false
+     
+     const forumCategory = await Category.findAll()
+         const cathbs = forumCategory.map(category => category.get({plain:true}))
+         console.log(cathbs);
+     res.render("submit_post",{
+         categories:cathbs,
+         posts:hbsposts,
+         loggedIn,
+         username:req.session.user?.username
+     })
+ })
+ 
 // go to profile editor page
 router.get("/profileEditor", (req,res) => {
     if(!req.session.user){
