@@ -126,6 +126,7 @@ ul {
 
 .rightList {
     display: flex;
+    flex-direction: column;
     background-color: var(--body-color);
     justify-content: center;
     align-items: center;
@@ -147,6 +148,7 @@ ul {
     flex-direction: column;
     justify-content: space-around;
 }
+
 
 /*Topics Page*/
 
@@ -361,6 +363,10 @@ ul {
 #bioInput {
     width: 50%;
     height:40%;
+}
+
+#profileAvatar {
+    
 }
 
 /*create topic*/
