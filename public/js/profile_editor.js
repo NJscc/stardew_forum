@@ -42,6 +42,9 @@ var myWidget = cloudinary.createUploadWidget({
         "image_search",
         "google_drive"
     ],
+    showAdvancedOptions: false,
+    cropping: true,
+    multiple: false,
     styles: {
         palette: {
             window: "#151152",
