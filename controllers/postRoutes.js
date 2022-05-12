@@ -39,18 +39,20 @@ router.get("/:id", (req, res) => {
   //     });
   // });
 
-  // router.post('/', async (req, res) => {
-  //   try {
-  //     const newpostData = await Post.create({
-  //       text: req.body.text,
-  //       user_id: req.session.user.user_id,
-  //       title_id:req.body.title_id
-  //     });
-  //     res.status(200).json(newpostData);
-  //   } catch (err) {
-  //     res.status(400).json(err);
-  //   }
-  // });
+  router.post('/', async (req, res) => {
+    try {
+      if(!req.session.user){
+          return res.status(403)}
+        const newpostData = await Post.create({
+        text: req.body.text,
+        user_id: req.session.user.user_id,
+        title_id:req.body.title_id
+      });
+      res.status(200).json(newpostData);
+    } catch (err) {
+      res.status(400).json(err);
+    }
+  });
 
 
   router.put("/:id", (req, res) => {
