@@ -21,7 +21,7 @@
         <div id="buttons">
 
         {{#if loggedIn}}
-        <a href="/profile/-1"><button>profile</button></a>
+        <a href="/profile/-1"><button>{{username}}</button></a>
         <a href="/api/users/logout"><button id="logoutBtn">Logout</button></a>
         {{else}}
             <a href= "/login"><button type="button" id="loginBtn">Login!</button></a>
