@@ -25,6 +25,9 @@ router.get("/:id", (req, res) => {
   });
 
   router.post("/", (req, res) => {
+    if(!req.session.user){
+      return res.status(401).json({msg:"Please login to create a topic!"})
+  }
     Topic.create(req.body)
       .then(newTopic => {
         req.session.user = {

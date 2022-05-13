@@ -2,8 +2,16 @@ const express = require('express');
 const router = express.Router();
 const {User,Post, Category, Topic} = require('../models');
 
+
+// where: {
+//     createdAt: [2022-05-12T22:35:41.000Z]
+//    },
+
 router.get("/",async (req,res)=>{
-   let allPosts = await Post.findAll()
+   let allPosts = await Post.findAll({ limit:20, 
+    order: [['createdAt', 'DESC']]
+})
+
         const hbsposts = allPosts.map(post=>post.get({plain:true}))
         console.log(hbsposts)
         const loggedIn = req.session.user?true:false
@@ -75,12 +83,6 @@ router.get("/login",(req,res)=>{
     res.render("login")
 })
 
-// router.get("/profile",(req,res)=>{
-//     if(req.session.user){
-//         return res.redirect("/profile/-1")
-//     }
-//     res.render("login")
-// })
 
 // go to profile viewer page
 router.get("/profile/:id",(req,res)=>{
