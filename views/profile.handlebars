@@ -25,14 +25,13 @@
                     <h2 class="rightProfileTitle">Recent posts</h2>
                 </div>
                 <div class="rightProfileList">
+                    {{#each userposts as |userposts|}}
                     <ul>
                         <li>
-                            <p>{{userpost}}</p>
-                        </li>
-                        <li>
-                            <p>Sample2</p>
+                            <p>{{userposts.text}}</p>
                         </li>
                     </ul>
+                    {{/each}}
                 </div>
             </div>
         </div>
