@@ -15,7 +15,7 @@ body {
     background: var(--bg-color);
 }
 
-/*Main styling - on every page*/
+/*Main styling - on every page-----------------------------------------------------------------*/
 /*Header styling*/
 header {
     display: flex;
@@ -236,7 +236,7 @@ ul {
     font-size: 50px;
 }
 
-/*Topics Page*/
+/*Topics Page---------------------------------------------------------------------------*/
 
 .topicPostTitle {
     display: flex;
@@ -336,8 +336,7 @@ ul {
     margin-right: 5%;
 }
 
-/*Profile Page*/
-
+/*Profile Page---------------------------------------------------------------------------------------------------*/
 
 .displayProfileBlockLeft {
     display: flex;
@@ -430,14 +429,79 @@ ul {
 #newBioBtn {
 
 }
-/*Login Page*/
+/*Login Page---------------------------------------------------------------------------------------------------------------*/
 
-/*Signup Page*/
+/*titles too large, submission boxes too small, doesn't respond to screen size*/
+
+.displayBlockProfile {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.topicProfileTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    margin-bottom: 10px;
+}
+
+.topicProfileTitle h2 {
+    font-size: 40pt;
+}
+
+.userPassBox {
+    border-radius: 10px;
+    border-style: solid;
+    border-color: var(--dark-purple);
+    display: flex;
+    margin-bottom: 100px;
+    flex-direction: column;
+    background-color: var(--body-color);
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.formFormat {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.userPassLabel {
+    color: var(--dark-purple);
+    font-size: 30pt;
+}
+
+.userPassSubmit {
+
+}
+
+/*
+"bodyContainer"
+    "topicPostTitle"
+"rightTitle"
+    "rightList"
+login
+loginName
+loginPassword
+submitBtn
+signupName
+signupPassword
+submitBtn
+*/
+
+
+/*Signup Page-----------------------------------------------------------------------------------------------------*/
 .rightProfileTitle {
     width: 100%;
 }
 
-/*add/edit profile page*/
+/*add/edit profile page----------------------------------------------------------------------------------------------------*/
 #profileSubmission {
     display: flex;
     flex-direction: column;
