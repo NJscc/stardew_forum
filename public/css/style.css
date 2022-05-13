@@ -36,7 +36,7 @@ header {
     text-align: center;
     display: flex;
     margin: auto;
-    font-family: sans-serif;
+    font-family: 'VT323', sans-serif;
     font-size: 80pt;
     text-decoration: none;
     width: 60%;
@@ -90,6 +90,7 @@ header {
     align-items: center;
     border-radius: 10px;
     margin: auto;
+    font-family: 'VT323', sans-serif;
 }
 
 footer {
@@ -103,6 +104,7 @@ footer {
     width: 100%;
     color: var(--dark-purple);
     text-align: center;
+    font-family: 'VT323', sans-serif;
 }
 
 footer p {
@@ -117,6 +119,7 @@ ul {
 /*Categories+Home Page*/
 .bodyContainer {
     display: flex;
+    font-family: 'VT323', sans-serif;
 }
 
 .displayBlockLeft {
@@ -248,6 +251,7 @@ ul {
     width: 80%;
     margin-bottom: 10px;
     font-size: 40px;
+    font-family: 'VT323', sans-serif;
 }
 
 .rightTopicPostTitle {
@@ -346,6 +350,7 @@ ul {
     flex-direction: column;
     width: 65%;
     align-items: center;
+    font-family: 'VT323', sans-serif;
 }
 
 
@@ -354,6 +359,7 @@ ul {
     flex-direction: column;
     width: 35%;
     align-items: center;
+    font-family: 'VT323', sans-serif;
 }
 
 .leftProfileTitle {
@@ -441,6 +447,7 @@ ul {
     flex-direction: column;
     width: 100%;
     align-items: center;
+    font-family: 'VT323', sans-serif;
 }
 
 .topicProfileTitle {
@@ -502,6 +509,11 @@ submitBtn
 /*Signup Page-----------------------------------------------------------------------------------------------------*/
 .rightProfileTitle {
     width: 100%;
+    font-family: 'VT323', sans-serif;
+}
+
+#submitBtn {
+    font-size: 35px;
 }
 
 /*add/edit profile page----------------------------------------------------------------------------------------------------*/
