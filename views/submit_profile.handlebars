@@ -1,30 +1,29 @@
 <main>
+
+    <!--remove welcome, center display boxes, login button should be diplaying username, signup button should show logout, 
+     interior of submission box needs polish -->
+    <h2>Welcome, {{user.username}}</h2>
+    {{!-- {{#if loggedIn}}
+    {{/if}} --}}
         <!---->
         <div class="bodyContainer">
-            <div class="displayBlockLeft">
-                <h2 class="leftTitle">Categories</h2>
-                <div class="leftList">
-                    <ul>
-                        <!--Needs code to fill elements-->
-                        <li>Placeholder1</li>
-                        <li>Placeholder2</li>
-                        <li>Placeholder3</li>
-                    </ul>
-                </div>
-            </div>
             <div class="displayBlockRight">
                 <div class="topicPostTitle">
-                    <h2 class="rightTitle">Create your Profile!</h2>
+                    <h2 class="rightTitle">Update your Profile!</h2>
                 </div>
                 <div class="rightList">
-                    <form id="profileSubmission" action="">
-                        <p>Placeholder for cloudinary widget</p>
+                    <!--Profile image and widget-->
+                    <img id="profileAvatar" src="" alt="Your profile image/avatar will be shown here!">
+                    <button id="upload_widget" class="cloudinary-button">Upload your image!</button>
+                    <form id="submitBioBtn" action="">
+                        <label for="userNameInput">Please choose your name!</label><br>
+                        <input type="text" id="userNameInput" name="userNameInput"><br>
                         <label for="bioInput">Please submit your biography!</label><br>
                         <input type="text" id="bioInput" name="bioInput"><br>
-                        <input type="submit" value="Submit" id="submitBioBtn">
+                        <!--<input type="submit" value="Submit" id="submitBioBtn">-->
+                        <button>Submit</button>
                     </form>
                 </div>
             </div>
-        </div>
-    
     </main>
+    <script src="/js/profile_editor.js"></script>

@@ -1,19 +1,25 @@
  <main>
-        <!---->
+        <!--main button which should display username when on this page fails - display boxes need polish on outline and interior elements-->
         <div class="bodyContainer">
             <div class="displayProfileBlockLeft">
                 <h2 class="leftProfileTitle">User Profile</h2>
                 <div class="profileItems"> 
                     <div id="userElements">
-                        <img src="" alt="This will be the user's image" id="userPicture">
-                        <p id="userProfileText">This will be the user's profile</p>
+                        <div>
+                            <img src="{{imageUrl}}" alt="This will be the user's image" id="userPicture">
+                        </div>
+                        <p id="userProfileText"></p>
                     </div>
                     <div id="buttonBlock">
-                        <button id="newImageBtn">This will be for the user to submit an image.</button>
-                        <button id="newBioBtn">This will be for the user to submit a new biography.</button>
+                        <div id="userNameView">{{userName}} </div>
+                        <div id="userBioView">{{userBio}}</div>
+                        {{#if selfProfile}}
+                        <button id="editUserBtn">EDIT</button>
+                        {{/if}}
                     </div>
                 </div>
             </div>
+
             <div class="displayProfileBlockRight">
                 <div class="topicPostTitle">
                     <h2 class="rightProfileTitle">Recent posts</h2>
@@ -21,7 +27,7 @@
                 <div class="rightProfileList">
                     <ul>
                         <li>
-                            <p>Sample1</p>
+                            <p>{{userpost}}</p>
                         </li>
                         <li>
                             <p>Sample2</p>
@@ -32,3 +38,6 @@
         </div>
     
     </main>
+
+    <script src="/js/profile_viewer.js"></script>
+

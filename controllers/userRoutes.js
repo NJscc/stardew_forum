@@ -71,12 +71,13 @@ router.get('/', async (req, res) => {
       });
   });
   
-  //should we update with id or a unique user name? 
 
-  router.put("/:id", (req, res) => {
+
+  router.put("/", (req, res) => {
+    console.log(req.session)
     User.update(req.body, {
       where: {
-        id: req.params.id
+        id: req.session.user.id
       }
     }).then(updatedUser => {
       res.json(updatedUser);
@@ -87,7 +88,7 @@ router.get('/', async (req, res) => {
     });
   });
 
-  router.delete("/:id", (req, res) => {
+    router.delete("/:id", (req, res) => {
     User.destroy({
       where: {
         id: req.params.id

@@ -1,40 +1,39 @@
 <!--{{{body}}}, replaces main-->
     <main>
-        <!---->
+        <!--topic list needs styling - post list, post list title, and create post button all need styling
+        Topic button should link back to display-topic page-->
         <div class="bodyContainer">
             <div class="displayBlockLeft">
                 <h2 class="leftTitle">Topics</h2>
                 <div class="leftList">
-                    <ul>
-                        <!--Needs code to fill elements-->
-                        <li>Placeholder1</li>
-                        <li>Placeholder2</li>
-                        <li>Placeholder3</li>
-                    </ul>
+                    <div>
+                        {{#each topicalls as |topicall|}}
+                        <a href= "/topics/{{id}}"><h3>{{topicall.title}}</h3></a>
+                        {{/each}}
+                    </div>
                 </div>
             </div>
             <div class="displayBlockRight">
                 <div class="topicPostTitle">
-                    <h2 class="rightTopicPostTitle">Topic Name</h2>
-                    <button type="button" id="createPost">Create</button>
+                    <h2 class="rightTopicPostTitle">{{topic_title}}</h2>
+                    <p>{{topic_text}}</p>
+                    <a href="/submitpost/{{topic_id}}" <!--id="createPost"-->>Create</a>
                 </div>
                 <div class="rightTopicList">
                     <ul>
+                        {{#each posts as |posts|}}
                         <li>
                             <div class="topicList">
-                                <p class="username">User</p>
-                                <p class="postText">Post Title</p>
+                                <p class="username">{{posts.dataValues.user_id}}</p>
+                                <p class="postText">{{posts.dataValues.text}}</p>
                             </div>
                         </li>
-                        <li>
-                            <div class="topicList">
-                                <p class="username">User</p>
-                                <p class="postText">Post Title</p>
-                            </div>
-                        </li>
+                        {{/each}}
                     </ul>
                 </div>
             </div>
         </div>
-    
     </main>
+
+    {{!-- <script src="/js/create_post.js"></script> --}}
+    
