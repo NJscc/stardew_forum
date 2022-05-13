@@ -1,9 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const {User,Post, Category, Topic} = require('../models');
+const sequilize = require("sequelize");
 
 router.get("/",async (req,res)=>{
-   let allPosts = await Post.findAll()
+    let allPosts = await Post.findAll({ limit:20, 
+    order: [[sequilize.col("created_at"), "DESC"]]
+})
+
         const hbsposts = allPosts.map(post=>post.get({plain:true}))
         console.log(hbsposts)
         const loggedIn = req.session.user?true:false
@@ -31,6 +35,7 @@ router.get("/categories/:id", async (req,res) => {
         console.log(hbtopic)
     res.render("topics",{
         category_title: oneCategory.dataValues.title,
+        category_id: req.params.id,
         topics: hbtopic,
         loggedIn,
         username:req.session.user?.username
@@ -65,12 +70,6 @@ router.get("/login",(req,res)=>{
     res.render("login")
 })
 
-// router.get("/profile",(req,res)=>{
-//     if(req.session.user){
-//         return res.redirect("/profile/-1")
-//     }
-//     res.render("login")
-// })
 
 // go to profile viewer page
 router.get("/profile/:id",(req,res)=>{
@@ -107,6 +106,12 @@ router.get("/profile/:id",(req,res)=>{
 router.get("/submitpost/:id", async (req,res) => {
     res.render("submit_post")
 })
+
+/* go to submit topic page*/
+router.get("/submittopic/:id", async (req,res) => {
+    res.render("submit_topic")
+})
+
 
 // go to profile editor page
 router.get("/profileEditor", (req,res) => {

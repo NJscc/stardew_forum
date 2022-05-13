@@ -1,14 +1,15 @@
-document.querySelector("#submitpostBtn").addEventListener("click",e=>{
+document.querySelector("#submitTopicBtn").addEventListener("click",e=>{
     console.log("clicked!")
     e.preventDefault();
     const id = parseInt(window.location.pathname.split('/')[2])
     console.log(id)
-const postObj = {
-    text:document.querySelector("#postText").value,
+const topicObj = {
+    title:document.querySelector("#topicTitle").value,
+    text:document.querySelector("#topicText").value,
 }
-fetch(`/api/posts/${id}`,{
+fetch(`/api/topics/${id}`,{
     method:"POST",
-    body:JSON.stringify(postObj),
+    body:JSON.stringify(topicObj),
     headers:{
         "Content-Type":"application/json"
     }
@@ -20,5 +21,3 @@ fetch(`/api/posts/${id}`,{
     }
 })
 })
-
-
