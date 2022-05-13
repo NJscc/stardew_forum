@@ -25,6 +25,10 @@ router.get("/",async (req,res)=>{
 
 router.get("/categories/:id", async (req,res) => {
     const oneCategory = await Category.findByPk(req.params.id)
+
+    const allCategories = await Category.findAll()
+    const allCategoriesHbs = allCategories.map(category => category.get({plain:true})) 
+
     const loggedIn = req.session.user?true:false
     const hbtopic = await Topic.findAll({
         where: {
@@ -37,6 +41,7 @@ router.get("/categories/:id", async (req,res) => {
         category_title: oneCategory.dataValues.title,
         category_id: req.params.id,
         topics: hbtopic,
+        categories:allCategoriesHbs,
         loggedIn,
         username:req.session.user?.username
     })    
@@ -44,6 +49,8 @@ router.get("/categories/:id", async (req,res) => {
 
 router.get("/topics/:id", async (req,res) => {
     const oneTopic = await Topic.findByPk(req.params.id)
+    const allTopics = await Topic.findAll()
+    const allTopicsHbs = allTopics.map(topicall => topicall.get({plain:true})) 
     const loggedIn = req.session.user?true:false
     const hbpost = await Post.findAll({
         where: {
@@ -57,6 +64,7 @@ router.get("/topics/:id", async (req,res) => {
         topic_text: oneTopic.dataValues.text,
         topic_id: req.params.id,
         topics: oneTopic,
+        topicalls:allTopicsHbs,
         posts: hbpost,
         loggedIn,
         username:req.session.user?.username
