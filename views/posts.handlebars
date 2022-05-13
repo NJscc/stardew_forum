@@ -16,7 +16,7 @@
                 <div class="topicPostTitle">
                     <h2 class="rightTopicPostTitle">{{topic_title}}</h2>
                     <p>{{topic_text}}</p>
-                    <button type="button" id="createPost">Create</button>
+                    <a href="/submitpost/{{topic_id}}" <!--id="createPost"-->>Create</a>
                 </div>
                 <div class="rightTopicList">
                     <ul>
@@ -34,4 +34,5 @@
         </div>
     </main>
 
-    <script src="/js/create_post.js"></script>
+    {{!-- <script src="/js/create_post.js"></script> --}}
+    
