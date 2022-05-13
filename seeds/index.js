@@ -19,7 +19,13 @@ const topic = [
         text: "this is text content",
         category_id: "1",
         user_id: "1"
-    }
+    },
+    {
+        title: "Favorite mods",
+        text: "this is text content",
+        category_id: "4",
+        user_id: "2"
+    },
 ]
 
 const user = [
@@ -70,6 +76,16 @@ const post = [
         text: "I love growing cranberries!",
         user_id: "1",
         topic_id: "3"
+    },
+    {
+        text: "pros and cons of your favorite mods??!",
+        user_id: "2",
+        topic_id: "4"
+    },
+    {
+        text: "I love starfruit",
+        user_id: "2",
+        topic_id: "1"
     }
 ]
 
