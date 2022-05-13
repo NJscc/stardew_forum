@@ -392,6 +392,7 @@ ul {
     width: 100%;
     margin-bottom: 10px;
     font-size: 40px;
+    font-family: 'VT323', sans-serif;
 }
 
 .rightProfileList {
@@ -518,26 +519,8 @@ ul {
     border-radius: 5px;
 }
 
-/*
-"bodyContainer"
-    "topicPostTitle"
-"rightTitle"
-    "rightList"
-login
-loginName
-loginPassword
-submitBtn
-signupName
-signupPassword
-submitBtn
-*/
-
 
 /*Signup Page-----------------------------------------------------------------------------------------------------*/
-.rightProfileTitle {
-    width: 100%;
-    font-family: 'VT323', sans-serif;
-}
 
 #submitBtn {
     font-size: 35px;
