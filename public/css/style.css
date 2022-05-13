@@ -40,6 +40,9 @@ header {
     font-size: 80pt;
     text-decoration: none;
     width: 60%;
+    @media screen and (max-width: 1007px) {
+        font-size: 60pt;
+    }
 }
 
 
