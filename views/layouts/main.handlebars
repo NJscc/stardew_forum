@@ -22,7 +22,7 @@
         <div id="buttons">
             <!--<div id="btnContainer">-->
             {{#if loggedIn}}
-                <a href="/profile/-1" class="btnAnchor"><button class="mainHeaderBtn">{{username}}</button></a>
+                <a href="/profile/-1" class="btnAnchor"><button id="profileBtn" class="mainHeaderBtn">{{username}}</button></a>
                 <a href="/api/users/logout" class="btnAnchor"><button id="logoutBtn" class="mainHeaderBtn">Logout</button></a>
             {{else}}
                 <a href= "/login" class="btnAnchor"><button type="button" id="loginBtn" class="mainHeaderBtn">Login!</button></a>
