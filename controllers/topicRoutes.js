@@ -24,16 +24,16 @@ router.get("/:id", (req, res) => {
       });
   });
 
-  router.post("/", (req, res) => {
+  router.post("/:id", (req, res) => {
     if(!req.session.user){
       return res.status(401).json({msg:"Please login to create a topic!"})
-  }
-    Topic.create(req.body)
-      .then(newTopic => {
-        req.session.user = {
-          title:newTopic.title,
-          text:newTopic.text,
-        }
+    }
+      Topic.create({
+        title:req.body.title,
+        text:req.body.text,
+        user_id:req.session.user.id,
+        category_id:req.params.id
+      }).then(newTopic => {
         res.json(newTopic);
       })
       .catch(err => {
@@ -42,7 +42,7 @@ router.get("/:id", (req, res) => {
       });
   });
 
-  //only owner of that topic should be able to delete
+  //only owner of that topic should be able to delete???
   router.put("/:id", (req, res) => {
     Topic.update(req.body, {
       where: {

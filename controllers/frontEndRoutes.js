@@ -1,15 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const {User,Post, Category, Topic} = require('../models');
-
-
-// where: {
-//     createdAt: [2022-05-12T22:35:41.000Z]
-//    },
+const sequilize = require("sequelize");
 
 router.get("/",async (req,res)=>{
-   let allPosts = await Post.findAll({ limit:20, 
-    order: [['createdAt', 'DESC']]
+    let allPosts = await Post.findAll({ limit:20, 
+    order: [[sequilize.col("created_at"), "DESC"]]
 })
 
         const hbsposts = allPosts.map(post=>post.get({plain:true}))
@@ -39,6 +35,7 @@ router.get("/categories/:id", async (req,res) => {
         console.log(hbtopic)
     res.render("topics",{
         category_title: oneCategory.dataValues.title,
+        category_id: req.params.id,
         topics: hbtopic,
         loggedIn,
         username:req.session.user?.username
@@ -109,6 +106,12 @@ router.get("/profile/:id",(req,res)=>{
 router.get("/submitpost/:id", async (req,res) => {
     res.render("submit_post")
 })
+
+/* go to submit topic page*/
+router.get("/submittopic/:id", async (req,res) => {
+    res.render("submit_topic")
+})
+
 
 // go to profile editor page
 router.get("/profileEditor", (req,res) => {

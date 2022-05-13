@@ -25,30 +25,16 @@ router.get("/:id", (req, res) => {
     });
 });
 
-<<<<<<< HEAD
-router.post("/", (req, res) => {
-  if (!req.session.user) {
-    return res
-      .status(401)
-      .json({ msg: "Please login to create a blog post!" });
-  }
-  Post.create({
-    text: req.body.text,
-    user_id: req.session.user.id,
-    topic_id: 1,
-  })
-    .then((newPost) => {
-      res.json(newPost);
-=======
   router.post("/:id", (req, res) => {
     if(!req.session.user){
-      return res.status(401).json({msg:"ya gotta login to create a blog post!"})
+      return res.status(401).json({msg:"Please login to create a blog post!"})
   }
     Post.create({
       text:req.body.text,
       user_id:req.session.user.id,
       topic_id:req.params.id
->>>>>>> dev
+    }).then(newPost => {
+      res.json(newPost);
     })
     .catch((err) => {
       console.log(err);
