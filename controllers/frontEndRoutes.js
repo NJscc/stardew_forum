@@ -31,11 +31,6 @@ router.get("/categories/:id", async (req,res) => {
             category_id: req.params.id
         }
     })
-        console.log(allCategories)
-        console.log("???????????")
-        console.log(allCategoriesHbs)
-        console.log("#########")
-        console.log(oneCategory)
         console.log(hbtopic)
     res.render("topics",{
         category_title: oneCategory.dataValues.title,
@@ -48,18 +43,25 @@ router.get("/categories/:id", async (req,res) => {
 
 router.get("/topics/:id", async (req,res) => {
     const oneTopic = await Topic.findByPk(req.params.id)
+
+    const allTopics = await Topic.findAll()
+        const allTopicsHbs = allTopics.map(topicall => topicall.get({plain:true})) 
+
     const loggedIn = req.session.user?true:false
     const hbpost = await Post.findAll({
         where: {
             topic_id: req.params.id
         }
     })
+        console.log(allTopicsHbs)
+        console.log("9999999999999")
         console.log(oneTopic)
         console.log(hbpost)
     res.render("posts",{
         topic_title: oneTopic.dataValues.title,
         topic_text: oneTopic.dataValues.text,
         topics: oneTopic,
+        topicalls:allTopicsHbs,
         posts: hbpost,
         loggedIn,
         username:req.session.user?.username

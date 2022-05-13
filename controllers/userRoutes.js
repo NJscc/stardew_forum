@@ -71,7 +71,7 @@ router.get('/', async (req, res) => {
       });
   });
   
-  //should we update with id or a unique user name? 
+
 
   router.put("/", (req, res) => {
     console.log(req.session)

@@ -5,12 +5,11 @@
             <div class="displayBlockLeft">
                 <h2 class="leftTitle">Topics</h2>
                 <div class="leftList">
-                    <ul>
-                        <!--Needs code to fill elements-->
-                        <li>Placeholder1</li>
-                        <li>Placeholder2</li>
-                        <li>Placeholder3</li>
-                    </ul>
+                    <div>
+                        {{#each topicalls as |topicall|}}
+                        <a href= "/topics/{{id}}"><h3>{{topicall.title}}</h3></a>
+                        {{/each}}
+                    </div>
                 </div>
             </div>
             <div class="displayBlockRight">
