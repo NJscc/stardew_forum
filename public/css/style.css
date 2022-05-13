@@ -1,7 +1,7 @@
 :root {
-    --bg-color:#28ECF3;
-    --titles-color:#F3CF28;
-    --body-color:#F3EA28;
+    --bg-color:#6B3710;
+    --titles-color:#151152;
+    --body-color:#DDA059;
 }
 
 body {
@@ -17,8 +17,16 @@ header {
     height: 110px;
     border-bottom-style: solid;
     border-bottom-width: 6px;
-    border-color: black;
+    border-color: #DDA059;
     margin-bottom: 40px;
+}
+
+header a {
+    color: #DDA059
+}
+
+header a:hover {
+    color:#DDA059
 }
 
 header h1 {
@@ -146,6 +154,10 @@ ul {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+}
+
+.bodyContainer a {
+    color: #151152;
 }
 
 /*Topics Page*/
