@@ -1,27 +1,25 @@
 <main>
         <!---->
-        <div class="bodyContainer">
-            <div class="displayBlockLeft">
-                <h2 class="leftTitle">Recent</h2>
-                <div class="leftList">
-                    <ul>
-                        <!--Needs code to fill post elements-->
-                        <li>Placeholder1</li>
-                        <li>Placeholder2</li>
-                        <li>Placeholder3</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="displayBlockRight">
-                    <h2 class="rightTitle">Categories</h2>
-                <div class="rightList">
-                    <div class="category_list">
-                        {{#each categories as |category|}}
-                            <a href= "/categories/{{id}}"><h3>{{category.title}}</h3></a>
-                        {{/each}}
-                    </div>
+    <div class="bodyContainer">
+        <div class="displayBlockLeft">
+            <h2 class="leftTitle">Recent Posts</h2>
+            <div class="leftList">
+                <div class="posts_list">
+                    {{#each posts as |post|}}
+                        <a href= "/posts/{{id}}" class="homePostAnchor"><h3 class="homePosts">{{post.text}}</h3></a>
+                    {{/each}}
                 </div>
             </div>
         </div>
-    
-    </main>
+        <div class="displayBlockRight">
+                <h2 class="rightTitle">Topic Categories</h2>
+            <div class="rightList">
+                <div class="category_list">
+                    {{#each categories as |category|}}
+                        <a href= "/categories/{{id}}" class="homeCategoryAnchor"><h3 class="homeCategories">{{category.title}}</h3></a>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
