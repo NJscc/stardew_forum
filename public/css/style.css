@@ -94,7 +94,7 @@ header {
 }
 
 footer {
-    background-color: var(--titles-color);
+    background-color: var(--dark-purple);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -102,7 +102,7 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
-    color: var(--dark-purple);
+    color: var(--yellow-color);
     text-align: center;
     font-family: 'VT323', sans-serif;
 }
@@ -391,6 +391,7 @@ ul {
     width: 100%;
     margin-bottom: 10px;
     font-size: 40px;
+    font-family: 'VT323', sans-serif;
 }
 
 .rightProfileList {
@@ -441,11 +442,15 @@ ul {
 /*Login Page---------------------------------------------------------------------------------------------------------------*/
 
 /*titles too large, submission boxes too small, doesn't respond to screen size*/
+.bodyLogin {
+    display: flex;
+    flex-direction: row;
+}
 
 .displayBlockProfile {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 50%;
     align-items: center;
     font-family: 'VT323', sans-serif;
 }
@@ -454,7 +459,7 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40%;
+    width: 60%;
     margin-bottom: 10px;
 }
 
@@ -472,7 +477,7 @@ ul {
     background-color: var(--body-color);
     justify-content: center;
     align-items: center;
-    width: 50%;
+    width: 70%;
 }
 
 .formFormat {
@@ -480,37 +485,41 @@ ul {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    width: 75%;
+    margin: 30px 0;
 }
 
 .userPassLabel {
+    margin-top: 20px;
+    padding: 0 20px 0;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: var(--dark-purple);
     color: var(--dark-purple);
     font-size: 30pt;
+    background-color: var(--beige-color);
+    color: var(--dark-purple);
 }
 
 .userPassSubmit {
-
+    margin: 20px 0;
+    background-color: var(--dark-purple);
+    color: var(--yellow-color);
+    font-size: 30px;
+    text-align: center;
+    width: 85%;
+    border-radius: 5px;
 }
 
-/*
-"bodyContainer"
-    "topicPostTitle"
-"rightTitle"
-    "rightList"
-login
-loginName
-loginPassword
-submitBtn
-signupName
-signupPassword
-submitBtn
-*/
+.loginInputBox {
+    width: 90%;
+    border-style: solid;
+    border-color: var(--dark-purple);
+    border-radius: 5px;
+}
 
 
 /*Signup Page-----------------------------------------------------------------------------------------------------*/
-.rightProfileTitle {
-    width: 100%;
-    font-family: 'VT323', sans-serif;
-}
 
 #submitBtn {
     font-size: 35px;
@@ -614,3 +623,40 @@ submitBtn
         margin-bottom: 10px;
     }
 }
+/*below 1054 px - main and home handlebars criteria
+    - header - display buttons below the page title
+    - display recent posts above topic categories
+    - adjust widths of posts and categories to fill most of the 
+    width of the page
+*/
+
+/*
+@media screen and (max-width: 1054px) {
+    
+    header {
+        flex-direction: column;
+    }
+
+    /*
+    .movie {
+        flex-direction: column;
+    }
+
+    .meal {
+        flex-direction: column;
+    }
+
+    .search {
+        margin-bottom: 10px;
+        min-height: 120px;
+    }
+
+    .search, .result, .movieResult {
+        width: 100%;
+    }
+
+    .generateBtn {
+        width: 90%;
+    }
+} 
+*/
