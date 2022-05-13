@@ -48,6 +48,9 @@ header div button {
     text-align: center;
     justify-content: center;
     align-items: center;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 10px;
 }
 
 footer {
@@ -87,6 +90,10 @@ ul {
     margin-left: 15%;
     font-size: 40px;
     margin-bottom: 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--titles-color);
+    border-radius: 15px;
 }
 
 .leftList {
@@ -97,6 +104,10 @@ ul {
     width: 90%;
     margin-left: 15%;
     min-height: 300px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--body-color);
+    border-radius: 15px;
 }
 
 
@@ -126,6 +137,10 @@ ul {
     width: 80%;
     margin-bottom: 10px;
     font-size: 40px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--titles-color);
+    border-radius: 15px;
 }
 
 .rightTitle h2 {
@@ -139,6 +154,10 @@ ul {
     align-items: center;
     width: 80%;
     min-height: 300px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--body-color);
+    border-radius: 15px;
 }
 
 .rightList ul {
@@ -287,6 +306,10 @@ ul {
     margin-left: 15%;
     font-size: 40px;
     margin-bottom: 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--titles-color);
+    border-radius: 15px;
 }
 
 .profileItems {
@@ -297,6 +320,10 @@ ul {
     width: 90%;
     margin-left: 15%;
     min-height: 300px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--body-color);
+    border-radius: 15px;
 }
 
 .rightProfileTitle {
@@ -305,8 +332,12 @@ ul {
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     font-size: 40px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--titles-color);
+    border-radius: 15px;
 }
 
 .rightProfileList {
@@ -316,6 +347,10 @@ ul {
     align-items: center;
     width: 80%;
     min-height: 300px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--body-color);
+    border-radius: 15px;
 }
 
 .profileItems{
@@ -348,13 +383,22 @@ ul {
 }
 
 #newImageBtn {
-
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 10px;
 }
 
 #newBioBtn {
-
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 10px;
 }
 /*Login Page*/
+#submitBtn {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+}
 
 /*Signup Page*/
 .rightProfileTitle {
