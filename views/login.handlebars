@@ -1,54 +1,35 @@
 <main>
-        <!---->
-
-            {{!-- <div class="displayBlockLeft"> --}}
-                {{!-- <h2 class="leftTitle">Categories</h2>
-                <div class="leftList">
-                    <ul>
-                        <!--Needs code to fill elements-->
-                        <li>Placeholder1</li>
-                        <li>Placeholder2</li>
-                        <li>Placeholder3</li>
-                    </ul>
-                </div> --}}
-            {{!-- </div>
-            <div class="displayBlockRight"> --}}
-               
-
-        <div class="bodyContainer">
-            <div class="displayBlockLeft">
-             <div class="topicPostTitle">
-                    <h2 class="rightTitle">Log In</h2>
-                </div>
-                <div class="rightList">
-                    <form action="" id = "login">
-                        <label for="loginName">Username:</label><br>
-                        <input type="text" id="loginName" name="loginName"><br>
-                        <label for="loginPassword">Password:</label><br>
-                        <input type="password" id="loginPassword" name="loginPassword"><br>
-                        <input type="submit" value="Submit" id="submitBtn">
-                    </form>
-                </div>
+    <div class="bodyContainer">
+        <div class="displayBlockProfile">
+            <div class="topicProfileTitle">
+                <h2 class="rightTitle">Log In!</h2>
             </div>
-                </div>
-                <br>
-            </div>
-            <div class="displayBlockLeft">
-                <div class="topicPostTitle">
-                    <h2 class="rightTitle">Sign Up!</h2>
-                </div>
-                <div class="rightList">
-                    <form action="" id = "signup">
-                        <label for="signupName">Username:</label><br>
-                        <input type="text" id="signupName" name="signupName"><br>
-                        <label for="signupPassword">Password:</label><br>
-                        <input type="password" id="signupPassword" name="signupPassword"><br>
-                        <input type="submit" value="Submit" id="submitBtn">
-                    </form>
-                </div>
+            <div class="userPassBox" id="topBox">
+                <form action="" id="login" class="formFormat">
+                    <label for="loginName" class="userPassLabel">Username:</label><br>
+                    <input type="text" id="loginName" name="loginName"><br>
+                    <label for="loginPassword" class="userPassLabel">Password:</label><br>
+                    <input type="password" id="loginPassword" name="loginPassword"><br>
+                    <input type="submit" value="Submit" id="submitBtn" class="userPassSubmit">
+                </form>
             </div>
         </div>
+    </div>
+    <br>
+    <div class="displayBlockProfile">
+        <div class="topicProfileTitle">
+            <h2 class="rightTitle">Sign Up!</h2>
+        </div>
+        <div class="userPassBox">
+            <form action="" id="signup" class="formFormat">
+                <label for="signupName" class="userPassLabel">Username:</label><br>
+                <input type="text" id="signupName" name="signupName"><br>
+                <label for="signupPassword" class="userPassLabel">Password:</label><br>
+                <input type="password" id="signupPassword" name="signupPassword"><br>
+                <input type="submit" value="Submit" id="submitBtn" class="userPassSubmit">
+            </form>
+        </div>
+    </div>
+</main>
 
-    </main>
-    
-    <script src="/js/login.js"></script>
+<script src="/js/login.js"></script>

@@ -1,6 +1,7 @@
 <!--{{{body}}}, replaces main-->
     <main>
-        <!---->
+        <!--topic list needs styling - post list, post list title, and create post button all need styling
+        Topic button should link back to display-topic page-->
         <div class="bodyContainer">
             <div class="displayBlockLeft">
                 <h2 class="leftTitle">Topics</h2>
@@ -16,7 +17,7 @@
                 <div class="topicPostTitle">
                     <h2 class="rightTopicPostTitle">{{topic_title}}</h2>
                     <p>{{topic_text}}</p>
-                    <button type="button" id="createPost">Create</button>
+                    <a href="/submitpost/{{topic_id}}" <!--id="createPost"-->>Create</a>
                 </div>
                 <div class="rightTopicList">
                     <ul>
@@ -34,4 +35,5 @@
         </div>
     </main>
 
-    <script src="/js/create_post.js"></script>
+    {{!-- <script src="/js/create_post.js"></script> --}}
+    

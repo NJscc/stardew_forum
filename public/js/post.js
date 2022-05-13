@@ -1,11 +1,12 @@
 document.querySelector("#submitpostBtn").addEventListener("click",e=>{
     console.log("clicked!")
     e.preventDefault();
-
+    const id = parseInt(window.location.pathname.split('/')[2])
+    console.log(id)
 const postObj = {
     text:document.querySelector("#postText").value,
 }
-fetch("/api/posts",{
+fetch(`/api/posts/${id}`,{
     method:"POST",
     body:JSON.stringify(postObj),
     headers:{
