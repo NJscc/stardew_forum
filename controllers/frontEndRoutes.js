@@ -20,48 +20,38 @@ router.get("/",async (req,res)=>{
 })
 
 router.get("/categories/:id", async (req,res) => {
-    const oneCategory = await Category.findByPk(req.params.id);
-    
-    const allCategories = await Category.findAll()
-        const allCategoriesHbs = allCategories.map(category => category.get({plain:true})) 
-    
-        const loggedIn = req.session.user?true:false
+    const oneCategory = await Category.findByPk(req.params.id)
+    const loggedIn = req.session.user?true:false
     const hbtopic = await Topic.findAll({
         where: {
             category_id: req.params.id
         }
     })
+        console.log(oneCategory)
         console.log(hbtopic)
     res.render("topics",{
         category_title: oneCategory.dataValues.title,
         topics: hbtopic,
-        categories:allCategoriesHbs,
         loggedIn,
-        username:req.session.user?.username    
+        username:req.session.user?.username
     })    
 })
 
 router.get("/topics/:id", async (req,res) => {
     const oneTopic = await Topic.findByPk(req.params.id)
-
-    const allTopics = await Topic.findAll()
-        const allTopicsHbs = allTopics.map(topicall => topicall.get({plain:true})) 
-
     const loggedIn = req.session.user?true:false
     const hbpost = await Post.findAll({
         where: {
             topic_id: req.params.id
         }
     })
-        console.log(allTopicsHbs)
-        console.log("9999999999999")
         console.log(oneTopic)
         console.log(hbpost)
     res.render("posts",{
         topic_title: oneTopic.dataValues.title,
         topic_text: oneTopic.dataValues.text,
+        topic_id: req.params.id,
         topics: oneTopic,
-        topicalls:allTopicsHbs,
         posts: hbpost,
         loggedIn,
         username:req.session.user?.username
@@ -114,23 +104,10 @@ router.get("/profile/:id",(req,res)=>{
 })
 
 /* go to submit post page*/
-router.get("/submitpost",async (req,res)=>{
-    let allPosts = await Post.findAll()
-         const hbsposts = allPosts.map(post=>post.get({plain:true}))
-         console.log(hbsposts)
-         const loggedIn = req.session.user?true:false
-     
-     const forumCategory = await Category.findAll()
-         const cathbs = forumCategory.map(category => category.get({plain:true}))
-         console.log(cathbs);
-     res.render("submit_post",{
-         categories:cathbs,
-         posts:hbsposts,
-         loggedIn,
-         username:req.session.user?.username
-     })
- })
- 
+router.get("/submitpost/:id", async (req,res) => {
+    res.render("submit_post")
+})
+
 // go to profile editor page
 router.get("/profileEditor", (req,res) => {
     if(!req.session.user){
@@ -155,7 +132,7 @@ router.post("/profile",(req,res)=>{
     User.update({
         username: req.body.name,
         user_bio:req.body.bio,
-        //user_avatar:result.info.secure_url
+        user_avatar:result.info.secure_url
     },
     {
         where: {
