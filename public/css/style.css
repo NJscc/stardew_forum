@@ -14,11 +14,9 @@
 body {
     background: var(--bg-color);
 }
-
 main {
-    margin-bottom: 80px;
+    margin-bottom: 80px
 }
-
 /*Main styling - on every page-----------------------------------------------------------------*/
 /*Header styling*/
 header {
@@ -36,10 +34,9 @@ header {
 
 #titleText {
     justify-content: center;
-    align-items: center;
+    align-self: center;
     text-align: center;
     display: flex;
-    margin: auto;
     font-family: 'VT323', sans-serif;
     font-size: 80pt;
     text-decoration: none;
@@ -59,8 +56,7 @@ header {
 /*div containing header buttons*/
 #buttons {
     display: flex;
-    margin: auto;
-    align-items: center;
+    align-self: center;
     justify-content: space-around;
     width: 40%;
 }
@@ -86,12 +82,15 @@ header {
     height: 100%;
     display: flex;
     margin: 20px;
+    margin:auto;
     font-size: 45px;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    margin: auto;
     font-family: 'VT323', sans-serif;
+}
+#signupBtn {
+    white-space: nowrap;
 }
 
 footer {
@@ -588,6 +587,42 @@ ul {
     
 }
 
+@media screen and (max-width: 1054px) {
+    #titleText {
+        font-size: 40pt;
+    }
+    header {
+        flex-direction: column;
+    }
+    .mainHeaderBtn {
+        font-size: 30pt;
+        min-width: min-content;
+    }
+    .bodyContainer {
+        flex-direction: column;
+    }
+    .displayBlockLeft {
+        width: 90%;
+        margin-bottom: 15px;
+        align-self: center;
+    }
+    .displayBlockRight {
+        width: 100%;
+        align-self: center;
+    }
+    .leftTitle {
+        margin-left:auto;
+        margin-right:auto;
+    }
+    .leftList {
+        margin-left:auto;
+        margin-right:auto;
+    }
+    #buttons {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
 /*below 1054 px - main and home handlebars criteria
     - header - display buttons below the page title
     - display recent posts above topic categories

@@ -105,7 +105,7 @@ router.get("/profile/:id",(req,res)=>{
             selfProfile: selfProfile,
             loggedIn: loggedIn,
             imageUrl: hbsData.user_avatar,
-            userpost: hbsData.posts
+            userposts: hbsData.posts
         })
     })
 })
