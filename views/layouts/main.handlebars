@@ -17,17 +17,17 @@
     <!--Main Page - handles content to be displayed on ANY page generated-->
     <!--Header-->
     <header>
-        <a href= "/"><h1>Stardew Forum</h1></a>
+        <a id="titleText" href= "/">Stardew Forum</a>
         <div id="buttons">
-
-        {{#if loggedIn}}
-        <a href="/profile/-1"><button>{{username}}</button></a>
-        <a href="/api/users/logout"><button id="logoutBtn">Logout</button></a>
-        {{else}}
-            <a href= "/login"><button type="button" id="loginBtn">Login!</button></a>
-             <a href= "/login"><button type="button" id="signupBtn">Sign up!</button></a>
-        {{/if}}
-            
+            <!--<div id="btnContainer">-->
+            {{#if loggedIn}}
+                <a href="/profile/-1" class="btnAnchor"><button class="mainHeaderBtn">{{username}}</button></a>
+                <a href="/api/users/logout" class="btnAnchor"><button id="logoutBtn" class="mainHeaderBtn">Logout</button></a>
+            {{else}}
+                <a href= "/login" class="btnAnchor"><button type="button" id="loginBtn" class="mainHeaderBtn">Login!</button></a>
+                <a href= "/login" class="btnAnchor"><button type="button" id="signupBtn" class="mainHeaderBtn">Sign up!</button></a>
+            {{/if}}
+            <!--</div>-->
         </div>
         <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script> 
     </header>
