@@ -145,7 +145,6 @@ router.post("/profile",(req,res)=>{
     User.update({
         username: req.body.name,
         user_bio:req.body.bio,
-        user_avatar:result.info.secure_url
     },
     {
         where: {
