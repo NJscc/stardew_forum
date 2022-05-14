@@ -41,11 +41,6 @@ header {
     font-size: 80pt;
     text-decoration: none;
     width: 60%;
-}
-
-
-/* visited and active link */
-#titleText:visited, #titleText:active {
     color: var(--yellow-color);
 }
 
@@ -157,7 +152,7 @@ ul {
     margin-left: 20%;
 }
 
-.homePostAnchor{
+.homePostAnchor, .topicsLeftAnchor{
     justify-content: center;
     align-items: center;
     margin: 0 15px;
@@ -166,7 +161,7 @@ ul {
     text-decoration: none;
 }
 
-.homePosts {
+.homePosts, .topicsLeft {
     justify-content: space-around;
     align-items: center;
     margin: auto;
@@ -186,7 +181,7 @@ ul {
     align-items: center;
 }
 
-.rightTitle {
+.rightTitle, .rightTopicTitle {
     border-radius: 10px;
     border-style: solid;
     border-color: var(--dark-purple);
@@ -201,7 +196,7 @@ ul {
     text-align: center;
 }
 
-.rightList {
+.rightList, .rightTopicList {
     border-radius: 10px;
     border-style: solid;
     border-color: var(--dark-purple);
@@ -248,38 +243,89 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 100%;
     margin-bottom: 10px;
     font-size: 40px;
     font-family: 'VT323', sans-serif;
 }
 
-.rightTopicPostTitle {
+#topicTitleContainer {
     display: flex;
-    background-color: var(--titles-color);
-    justify-content: center;
-    align-items: center;
     width: 80%;
-    margin-bottom: 10px;
-    font-size: 40px;
+    justify-content: space-between;
+}
+
+.rightTopicTitle {
+    width: 60%;
 }
 
 #createTopic {
-    font-size: 25px;
-    width: 20%;
+    background-color: var(--dark-purple);
+    border-radius: 5px;
+    font-size: 45pt;
+    width: 40%;
+    margin: 0 20px;
     display: flex;
-    flex-shrink: 1;
     justify-content: center;
+    align-items: center;
+    text-align: center;
     margin-bottom: 10px;
+    color: var(--yellow-color);
+}
+
+#createTopic:hover {
+    color: var(--beige-color);
 }
 
 .rightTopicList {
+    
+}
+
+.topicListItem {
     display: flex;
-    background-color: var(--body-color);
+    flex-direction: row;
+    width: 100%;
+    margin: 20px 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.topicListItem p {
+    width: 35%;
+    text-align: left;
+    justify-content: center;
+    border-style: solid;
+    border-color: var(--dark-purple);
+    margin: 0 25px;
+    border-radius: 5px;
+    background-color: var(--beige-color);
+    color: var(--dark-purple);
+    font-size: 35pt;
+}
+
+.topicListItem a {
+    width: 65%;
+    text-align: center;
     justify-content: center;
     align-items: center;
-    width: 80%;
-    min-height: 300px;
+    background-color: var(--dark-purple);
+    color: var(--yellow-color);
+    margin: 0 25px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: var(--dark-purple);
+}
+
+.topicListItem a:hover {
+    color: var(--beige-color);
+}
+
+.topicListText {
+    font-size: 35pt;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .rightTopicList ul {
@@ -299,12 +345,6 @@ ul {
     justify-content: space-around;
 }
 
-.topicList {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-}
-
 .username {
     width: 30%;
     background-color: var(--titles-color);
@@ -313,6 +353,7 @@ ul {
     border-color: black;
 }
 
+/*
 .topicText {
     width: 70%;
     background-color: var(--body-color);
@@ -321,8 +362,7 @@ ul {
     border-color: black;
     margin-right: 5%;
 }
-
-
+*/
 /*Posts Page*/
 
 #createPost {
@@ -614,6 +654,8 @@ ul {
     
 }
 
+/*media query screen size adjustments*/
+
 @media screen and (max-width: 1054px) {
     #titleText {
         font-size: 40pt;
@@ -650,40 +692,3 @@ ul {
         margin-bottom: 10px;
     }
 }
-/*below 1054 px - main and home handlebars criteria
-    - header - display buttons below the page title
-    - display recent posts above topic categories
-    - adjust widths of posts and categories to fill most of the 
-    width of the page
-*/
-
-/*
-@media screen and (max-width: 1054px) {
-    
-    header {
-        flex-direction: column;
-    }
-
-    /*
-    .movie {
-        flex-direction: column;
-    }
-
-    .meal {
-        flex-direction: column;
-    }
-
-    .search {
-        margin-bottom: 10px;
-        min-height: 120px;
-    }
-
-    .search, .result, .movieResult {
-        width: 100%;
-    }
-
-    .generateBtn {
-        width: 90%;
-    }
-} 
-*/
