@@ -411,16 +411,22 @@ ul {
     margin-left: 15%;
     font-size: 40px;
     margin-bottom: 10px;
+    border-style: solid;
+    border-color: var(--dark-purple);
+    border-radius: 5px;
 }
 
 .profileItems {
-    display: flex;
     background-color: var(--body-color);
-    justify-content: center;
-    align-items: center;
     width: 90%;
     margin-left: 15%;
     min-height: 300px;
+    border-style: solid;
+    border-color: var(--dark-purple);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-content: baseline;
 }
 
 .rightProfileTitle {
@@ -429,9 +435,12 @@ ul {
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     font-size: 40px;
     font-family: 'VT323', sans-serif;
+    border-style: solid;
+    border-color: var(--dark-purple);
+    border-radius: 5px;
 }
 
 .rightProfileList {
@@ -441,44 +450,62 @@ ul {
     align-items: center;
     width: 80%;
     min-height: 300px;
-}
-
-.profileItems{
-    display: flex;
-    flex-direction: column;
-}
-
-#userElements {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    border-style: solid;
+    border-color: var(--dark-purple);
+    border-radius: 5px;
 }
 
 #userPicture {
-    width:40%;
+    width: 100%;
+    max-width: 180px;
     height: 100%;
+    max-height: 180px;
+    border-radius: 5%;
+    justify-self: center;
+    align-self: center;
 }
 
-#userProfileText{
-    width: 50%;
+#picDiv {
+    background-color: #151152;
+    padding: 5px;
+    border-style: solid;
+    border-color: #151152;
+    border-width: 5px;
+    border-radius: 5%;
+    display: flex;
+    max-width: 200px;
+    max-height: 200px;
+    margin: 5px;
+    justify-self: center;
+    align-self: center;
+}
+
+#userNameView {
+    font-size: 35px;
+    border-style: solid;
+    border-color: #151152;
+    border-width: 2px;
+    border-radius: 5%;
+    background-color:#151152;
+    color: #F3CF28;
+    min-width: 200px;
+    margin: 5px;
     text-align: center;
 }
 
+#editUserBtn {
+    width: fit-content;
+    height: 30px;
+    justify-self: flex-end;
+    margin: 10px;
+}
+
 #buttonBlock {
-    width: 100%;
     display: flex;
-    justify-content: space-around;
-    height: 15%;
+    align-content: flex-end;
+    justify-content: space-between;
 }
 
-#newImageBtn {
-
-}
-
-#newBioBtn {
-
-}
 /*Login Page---------------------------------------------------------------------------------------------------------------*/
 
 /*titles too large, submission boxes too small, doesn't respond to screen size*/
