@@ -7,24 +7,29 @@
                 <div class="leftList">
                     <div>
                         {{#each categories as |category|}}
-                        <a href= "/categories/{{id}}"><h3>{{category.title}}</h3></a>
+                        <a class="topicsLeftAnchor"href= "/categories/{{id}}"><h3 class="topicsLeft">{{category.title}}</h3></a>
                         {{/each}}
                     </div>
                 </div>
             </div>
             <div class="displayBlockRight">
                 <div class="topicPostTitle">
-                    <h2 class="rightTopicPostTitle">{{category_title}}</h2>
-                   <a href="/submittopic/{{category_id}}" <!--id="createTopic"-->>Create</a>
+                    <div id="topicTitleContainer">
+                        <h2 class="rightTopicTitle">{{category_title}}</h2>
+                        <!--uncommented createTopic ID-->
+                        <a href="/submittopic/{{category_id}}" id="createTopic">Create</a>
+                   </div>
                 </div>
-                {{#each topics as |topic|}}
                 <div class="rightTopicList">
-                    <div class="topicList">
-                        {{!-- <p class="username">{{user.username}}</p> --}}
-                        <a href="/topics/{{topic.dataValues.id}}"><h4 class="topicText">{{topic.dataValues.title}}</h4></a>
-                    </div>
+                    {{#each topics as |topic|}}
+                        <div class="topicListItem">
+                            <p>This is a test</p>
+                            <!--To work, username MUST be displayed with a 'p' tag and use the 'class' class-->
+                            {{!-- <p class="username">{{user.username}}</p> --}}
+                            <a href="/topics/{{topic.dataValues.id}}"><h4 class="topicListText">{{topic.dataValues.title}}</h4></a>
+                        </div>
+                    {{/each}}
                 </div>
-                {{/each}}
             </div>
         </div>
     
