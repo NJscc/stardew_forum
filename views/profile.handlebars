@@ -5,14 +5,14 @@
                 <h2 class="leftProfileTitle">User Profile</h2>
                 <div class="profileItems"> 
                     <div id="userElements">
-                        <div>
+                        <div id="picDiv">
                             <img src="{{imageUrl}}" alt="This will be the user's image" id="userPicture">
                         </div>
                         <p id="userProfileText"></p>
                     </div>
                     <div id="buttonBlock">
                         <div id="userNameView">{{userName}} </div>
-                        <div id="userBioView">{{userBio}}</div>
+                        <div id="userBioView">{{userBio}}This is a temporary bio!</div>
                         {{#if selfProfile}}
                         <button id="editUserBtn">EDIT</button>
                         {{/if}}
