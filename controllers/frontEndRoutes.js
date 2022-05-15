@@ -47,18 +47,25 @@ router.get("/categories/:id", async (req,res) => {
     })    
 })
 
+
 router.get("/topics/:id", async (req,res) => {
     const oneTopic = await Topic.findByPk(req.params.id)
     const allTopics = await Topic.findAll()
     const allTopicsHbs = allTopics.map(topicall => topicall.get({plain:true})) 
     const loggedIn = req.session.user?true:false
     const hbpost = await Post.findAll({
+        include: [
+            User
+        ],
         where: {
             topic_id: req.params.id
         }
     })
-        console.log(oneTopic)
-        console.log(hbpost)
+    console.log(oneTopic)
+    console.log("aaaaaaaaaaaaaaaa")
+    
+    console.log(hbpost);
+    console.log("bbbbbbbbbbbbbbb")
     res.render("posts",{
         topic_title: oneTopic.dataValues.title,
         topic_text: oneTopic.dataValues.text,
@@ -68,8 +75,10 @@ router.get("/topics/:id", async (req,res) => {
         posts: hbpost,
         loggedIn,
         username:req.session.user?.username
-    })    
+    })
+    
 })
+
 
 router.get("/login",(req,res)=>{
     if(req.session.user){
@@ -115,6 +124,7 @@ router.get("/submitpost/:id", async (req,res) => {
     res.render("submit_post")
 })
 
+
 /* go to submit topic page*/
 router.get("/submittopic/:id", async (req,res) => {
     res.render("submit_topic")
@@ -136,6 +146,7 @@ router.get("/profileEditor", (req,res) => {
     })
 })
 
+
 //submit new user's data to backend
 router.post("/profile",(req,res)=>{
     if(!req.session.user){
@@ -155,7 +166,5 @@ router.post("/profile",(req,res)=>{
         res.status(200).json(data);
     })
 })
-
-        
 
 module.exports = router;

@@ -24,7 +24,7 @@
                         {{#each posts as |posts|}}
                         <li>
                             <div class="topicList">
-                                <p class="username">{{posts.dataValues.user_id}}</p>
+                                <p class="username">{{posts.user.dataValues.username}}</p>
                                 <p class="postText">{{posts.dataValues.text}}</p>
                             </div>
                         </li>
