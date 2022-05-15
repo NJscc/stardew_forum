@@ -434,7 +434,7 @@ ul {
     background-color: var(--titles-color);
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 80%;
     margin-bottom: 0px;
     font-size: 40px;
     font-family: 'VT323', sans-serif;
@@ -690,5 +690,48 @@ ul {
     #buttons {
         width: 100%;
         margin-bottom: 10px;
+    }
+    #topicTitleContainer {
+        flex-direction: column;
+        width: 100%;
+    }
+    .rightTopicTitle {
+        width: 80%;
+        justify-self: center;
+        margin-left: 10%;
+    }
+    #createTopic {
+        width: 60%;
+        margin-left: 20%;
+    }
+    .topicListItem {
+        flex-direction: column-reverse;
+    }
+    .displayProfileBlockLeft {
+        width: 100%;
+        justify-self: center;
+    }
+    .profileItems {
+        margin: 0%;
+    }
+    .leftProfileTitle {
+        margin-left: 0%;
+    }
+    .displayProfileBlockRight {
+        width: 100%;
+        justify-self: center;
+        margin-top: 10px;
+    }
+    .rightProfileTitle {
+        width: 90%;
+    }
+    .rightProfileList {
+        width: 90%;
+    }
+    .bodyLogin {
+        flex-direction: column;
+    }
+    .displayBlockProfile {
+        width: 100%;
     }
 }
