@@ -112,7 +112,7 @@ ul {
 }
 
 /*Categories+Home Page*/
-.bodyContainer {
+.bodyContainer, .bodyLoginSignup{
     display: flex;
     font-family: 'VT323', sans-serif;
 }
@@ -162,7 +162,7 @@ ul {
     text-decoration: none;
 }
 
-.homePosts, .topicsLeft, .profilePosts, #userBioView {
+.homePosts, .topicsLeft, .profilePosts, #userBioView, .inputLabels {
     justify-content: space-around;
     align-items: center;
     margin: auto;
@@ -175,7 +175,7 @@ ul {
     font-size: 35px;
 }
 
-.displayBlockRight {
+.displayBlockRight, .displayNewItem {
     display: flex;
     flex-direction: column;
     width: 75%;
@@ -203,7 +203,7 @@ ul {
     border-color: var(--dark-purple);
     display: flex;
     flex-direction: column;
-    background-color: var(--body-color);
+    background-color: var(--yellow-color);
     justify-content: center;
     align-items: center;
     width: 80%;
@@ -454,7 +454,7 @@ ul {
     width: 100%;
 }
 
-#userPicture {
+.tagImage {
     width: 100%;
     border-radius: 5px;
     justify-self: center;
@@ -469,7 +469,7 @@ ul {
     width: 60%;
 }
 
-#picDiv {
+.displayImage {
     background-color: #151152;
     padding: 5px;
     border-style: solid;
@@ -503,7 +503,7 @@ ul {
     justify-content: space-around;
 }
 
-#editUserBtn {
+#editUserBtn,  #profileDataBtn, #submitTopicBtn, #submitPostBtn {
     width: 30%;
     justify-self: flex-end;
     margin: 10px;
@@ -513,7 +513,7 @@ ul {
     color: var(--yellow-color);
 }
 
-#editUserBtn:hover {
+#editUserBtn:hover, #profileDataBtn:hover {
     color: var(--beige-color);
 }
 
@@ -603,7 +603,11 @@ ul {
     font-size: 35px;
 }
 
-/*add/edit profile page----------------------------------------------------------------------------------------------------*/
+/* add/edit profile page----------------------------------------------------------------------------------------------------*/
+.bodyLoginSignup {
+    justify-content: center;
+}
+
 #profileSubmission {
     display: flex;
     flex-direction: column;
@@ -612,22 +616,42 @@ ul {
     width: 100%;
 }
 
-#bioInput {
-    width: 50%;
-    height:40%;
+#upload_widget {
+    font-size: 35pt;
+    background-color: var(--dark-purple);
+    color: var(--beige-color);
+    width: 55%;
+    margin: 30px auto;
 }
 
-#profileAvatar {
-    
+#submitBioBtn, #topicSubmission {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.inputLabels, .inputBoxes {
+    width: 65%;
+}
+
+.inputlabels {
+    margin-top: 20px;
+}
+
+.inputBoxes {
+    margin-bottom: 20px;
+    font-size: 20pt;
+}
+
+#profileDataBtn {
+    width: 50%;
 }
 
 /*create topic*/
 
-#topicSubmission {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.displayNewItem {
     width: 100%;
 }
 
@@ -641,8 +665,16 @@ ul {
     height:40%;
 }
 
+#newTopicTopLabel {
+    margin-top: 30px;
+}
+
+#topicTitle, #topicText {
+    width: 65%;
+}
+
 #submitTopicBtn {
-    
+    width: 45%;
 }
 
 /*create post*/
@@ -655,15 +687,14 @@ ul {
     width: 100%;
 }
 
-
 #postText {
-    width: 50%;
-    height:40%;
+    width: 55%;
 }
 
-#submitPostBtn {
-    
+#submitPostLabel {
+    margin-top: 30px;
 }
+
 
 /*media query screen size adjustments*/
 
@@ -775,6 +806,14 @@ ul {
 
     .rightProfileTitle {
         margin-top: 40px;
+    }
+
+    .rightTitle {
+        font-size: 40pt;
+    }
+
+    .inputLabels {
+        font-size: 28px;
     }
 
     

@@ -1,27 +1,16 @@
     <main>
         <!--Needs styling once page is correctly linked-->
         <div class="bodyContainer">
-            {{!-- <div class="displayBlockLeft">
-                <h2 class="leftTitle">Categories</h2>
-                <div class="leftList">
-                    <ul>
-                        <!--Needs code to fill elements-->
-                        <li>Placeholder1</li>
-                        <li>Placeholder2</li>
-                        <li>Placeholder3</li>
-                    </ul>
-                </div>
-            </div> --}}
-            <div class="displayBlockRight">
+            <div class="displayNewItem">
                 <div class="topicPostTitle">
                     <h2 class="rightTitle">Create a topic!</h2>
                 </div>
                 <div class="rightList">
                     <form id="topicSubmission" action="">
-                        <label for="topicTitle">Please type in your topic!</label><br>
-                        <input type="text" id="topicTitle" name="topicTitle"><br>
-                        <label for="topicText">Please add an explanation to your topic!</label><br>
-                        <input type="text" id="topicText" name="topicText"><br>
+                        <label class="inputLabels" id="newTopicTopLabel" for="topicTitle">Please type in your topic!</label><br>
+                        <input class="inputBoxes" type="text" id="topicTitle" name="topicTitle"><br>
+                        <label class="inputLabels" for="topicText">Please add an explanation to your topic!</label><br>
+                        <input class="inputBoxes" type="text" id="topicText" name="topicText"><br>
                         <input type="submit" value="Submit" id="submitTopicBtn">
                     </form>
                 </div>
