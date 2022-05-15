@@ -1,42 +1,40 @@
- <main>
-        <!--main button which should display username when on this page fails - display boxes need polish on outline and interior elements-->
-        <div class="bodyContainer">
-            <div class="displayProfileBlockLeft">
-                <h2 class="leftProfileTitle">User Profile</h2>
-                <div class="profileItems"> 
-                    <div id="userElements">
-                        <div id="picDiv">
-                            <img src="{{imageUrl}}" alt="This will be the user's image" id="userPicture">
-                        </div>
-                        <p id="userProfileText"></p>
+<main>
+    <!--main button which should display username when on this page fails - display boxes need polish on outline and interior elements-->
+    <div class="bodyContainer">
+        <div class="displayProfileBlockLeft">
+            <h2 class="leftProfileTitle">User Profile</h2>
+            <div class="profileItems">
+                <!--Item arrangement
+                    user image and bio are in the first 'row'
+                    og the container, and username
+                    and edit button are displayed in the second
+                -->
+                <div id="userElements">
+                    <div id="picDiv" class="displayImage">
+                        <img src="{{imageUrl}}" alt="Your image should appear here." id="userPicture" class="tagImage">
                     </div>
-                    <div id="buttonBlock">
-                        <div id="userNameView">{{userName}} </div>
-                        <div id="userBioView">{{userBio}}</div>
-                        {{#if selfProfile}}
+                    <!--<p id="userProfileText"></p> this tag was unused-->
+                    <p id="userBioView">Bio: {{userBio}}</p>
+                </div>
+                <div id="buttonBlock">
+                    <p id="userNameView">Username: {{userName}}</p>
+                    {{#if selfProfile}}
                         <button id="editUserBtn">EDIT</button>
-                        {{/if}}
-                    </div>
-                </div>
-            </div>
-
-            <div class="displayProfileBlockRight">
-                <div class="topicPostTitle">
-                    <h2 class="rightProfileTitle">Recent posts</h2>
-                </div>
-                <div class="rightProfileList">
-                    {{#each userposts as |userposts|}}
-                    <ul>
-                        <li>
-                            <p>{{userposts.text}}</p>
-                        </li>
-                    </ul>
-                    {{/each}}
+                    {{/if}}
                 </div>
             </div>
         </div>
-    
-    </main>
-
-    <script src="/js/profile_viewer.js"></script>
-
+        <div class="displayProfileBlockRight">
+            <div class="profilePostTitle">
+                <h2 class="rightProfileTitle">Recent posts</h2>
+            </div>
+            <div class="rightProfileList">
+                <!--TEST BY DISPLAYING POSTS-->
+                {{#each userposts as |userposts|}}
+                        <p class="profilePosts">{{userposts.text}}</p>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</main>
+<script src="/js/profile_viewer.js"></script>

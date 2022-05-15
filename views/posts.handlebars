@@ -6,30 +6,36 @@
             <div class="displayBlockLeft">
                 <h2 class="leftTitle">Topics</h2>
                 <div class="leftList">
-                    <div>
+                    <div class="leftListWidth">
                         {{#each topicalls as |topicall|}}
-                        <a href= "/topics/{{id}}"><h3>{{topicall.title}}</h3></a>
+                        <a href= "/topics/{{id}}" class="topicsLeftAnchor"><h3 class="topicsLeft">{{topicall.title}}</h3></a>
                         {{/each}}
                     </div>
                 </div>
             </div>
             <div class="displayBlockRight">
                 <div class="topicPostTitle">
-                    <h2 class="rightTopicPostTitle">{{topic_title}}</h2>
-                    <p>{{topic_text}}</p>
-                    <a href="/submitpost/{{topic_id}}" <!--id="createPost"-->>Create</a>
+                    <div class="topicTitleContainer">
+                        <h2 class="rightTopicTitle">{{topic_title}}</h2>
+                        <a href="/submitpost/{{topic_id}}" id="createPost">Create</a>
+                    </div>
                 </div>
                 <div class="rightTopicList">
-                    <ul>
-                        {{#each posts as |posts|}}
+                    <!--<ul>
                         <li>
-                            <div class="topicList">
+                        <div>-->
+                            <p id="topicBodyText">{{topic_text}}</p>
+                        <!--</div>-->
+                    
+                        {{#each posts as |posts|}}
+                            <div class="topicListItem">
                                 <p class="username">{{posts.dataValues.user_id}}</p>
                                 <p class="postText">{{posts.dataValues.text}}</p>
                             </div>
-                        </li>
+                        <!--</li>-->
                         {{/each}}
-                    </ul>
+                    <!--</ul>-->
+                    
                 </div>
             </div>
         </div>
