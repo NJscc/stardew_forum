@@ -1,4 +1,6 @@
-# Stardew Forum website
+# Stardew Forum Website
+
+Contributors: Ally Nostrand (Project Manager), Nicholas Jones (GitHub Manager), Seval Cakir, Aidan Hamann
 
 ## Overview  
 
@@ -11,13 +13,16 @@ will let they communicate about the
 
 game with other users on the 
 website. They can also place tags on their topics or posts 
-for sorting them, or to clarify their purpose. 
+for sorting them, or to clarify their purpose.
+<br></br>
 
 ## User Story 
 
     AS a fan of the 'Stardew Valley' game
     I WANT to have a forum to make or respond to questions and comments about it
     SO THAT I can help others enjoy the game too
+
+<br></br>
 
 ## Acceptance Criteria 
 
@@ -58,7 +63,8 @@ for sorting them, or to clarify their purpose.
     THEN I am logged out of my account, and can no longer post new items or alter my profile
         until I am signed in again
 
-    
+<br></br>
+
 ## Technologies Used 
 
 Our website uses the Cloudinary widget to store images uploaded by the 
@@ -66,6 +72,8 @@ user on a
 
 server, where they can be accessed and displayed in the
 user profile.
+
+<br></br>
 
 ## Future Project Direction and Development
 
@@ -78,17 +86,30 @@ elements of the user's in-game character. We could also
 expand the number of 
 categories, as well as add functionality for users to remove their topics or posts.
 
+In addition to expanding on our application's functionality, we would also
+have to address some bugs which currently exist. 
+
+Notably these are:
+
+* On the page to display a profile, the user's name does not display on the button in the header.
+* In either pages to display topics or posts, you can read other usernames, but they do not currently link so that other users can see their profile.
+* On all pages to either make a post, make a topic, or edit a profile, the buttons default to displaying 'login' and 'signup' instead of the username and 'logout'.
+* On the page to edit a profile, submitting an image takes you back to the original page, without submitting either the biography or username fields.
+* It is currently possible to submit an empty username or biography. 
+
+<br></br>
+
 ## Link to Deployed Application and GitHub repository
 
 * GitHub repository: https://github.com/NJscc/stardew_forum
 
 * Deployed link: https://stardew-forum-project.herokuapp.com/
+
+<br></br>
     
  ## Screenshot
 
 A screenshot of our deployed application is shown below.
 
-!["Our website screenshot."](./assets/images/pre-screenshot.png)
-
- ## Video Link (Required? - not listed in README criteria)
+!["Our website screenshot."](./assets/images/forum_image.png)
 
