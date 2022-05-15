@@ -1,4 +1,4 @@
-document.querySelector("#submitpostBtn").addEventListener("click",e=>{
+document.querySelector("#submitPostBtn").addEventListener("click",e=>{
     console.log("clicked!")
     e.preventDefault();
     const id = parseInt(window.location.pathname.split('/')[2])
