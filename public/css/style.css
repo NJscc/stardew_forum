@@ -241,6 +241,7 @@ ul {
 
 .topicPostTitle {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -248,8 +249,11 @@ ul {
     font-size: 40px;
     font-family: 'VT323', sans-serif;
 }
+.leftListWidth {
+    width: 75%;
+}
 
-#topicTitleContainer {
+.topicTitleContainer {
     display: flex;
     width: 80%;
     justify-content: space-between;
@@ -259,7 +263,7 @@ ul {
     width: 60%;
 }
 
-#createTopic {
+#createTopic, #createPost {
     background-color: var(--dark-purple);
     border-radius: 5px;
     font-size: 45pt;
@@ -273,7 +277,7 @@ ul {
     color: var(--yellow-color);
 }
 
-#createTopic:hover {
+#createTopic:hover, #createPost:hover {
     color: var(--beige-color);
 }
 
@@ -365,13 +369,8 @@ ul {
 */
 /*Posts Page*/
 
-#createPost {
-    font-size: 25px;
-    width: 20%;
-    display: flex;
-    flex-shrink: 1;
-    justify-content: center;
-    margin-bottom: 10px;
+.rightPostTopicName {
+
 }
 
 .postText {

@@ -5,16 +5,16 @@
             <div class="displayBlockLeft">
                 <h2 class="leftTitle">Categories</h2>
                 <div class="leftList">
-                    <div>
+                    <div class="leftListWidth">
                         {{#each categories as |category|}}
-                        <a class="topicsLeftAnchor"href= "/categories/{{id}}"><h3 class="topicsLeft">{{category.title}}</h3></a>
+                        <a class="topicsLeftAnchor" href= "/categories/{{id}}"><h3 class="topicsLeft">{{category.title}}</h3></a>
                         {{/each}}
                     </div>
                 </div>
             </div>
             <div class="displayBlockRight">
                 <div class="topicPostTitle">
-                    <div id="topicTitleContainer">
+                    <div class="topicTitleContainer">
                         <h2 class="rightTopicTitle">{{category_title}}</h2>
                         <!--uncommented createTopic ID-->
                         <a href="/submittopic/{{category_id}}" id="createTopic">Create</a>
