@@ -4,25 +4,25 @@ const {User,Post,Category,Topic} = require("../models")
 const topic = [
     {
         title: "Favorite Villagers",
-        text: "this is text content",
+        text: "What's your reasoning on your favorite villager?",
         category_id: "1",
         user_id: "1"
     },
     {
         title: "Farm Layout Ideas",
-        text: "this is text content",
+        text: "Show everyone your plans for your farm!",
         category_id: "1",
         user_id: "1"
     },
     {
         title: "Best Crops",
-        text: "this is text content",
+        text: "Share your thoughts on your favorite crops!",
         category_id: "1",
         user_id: "1"
     },
     {
         title: "Favorite mods",
-        text: "this is text content",
+        text: "Tell everyone about your favorite mods!",
         category_id: "4",
         user_id: "2"
     },
