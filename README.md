@@ -1,5 +1,6 @@
 # Stardew Forum Website
-<br></br>
+
+Contributors: Ally Nostrand (Project Manager), Nicholas Jones (GitHub Manager), Seval Cakir, Aidan Hamann
 
 ## Overview  
 
