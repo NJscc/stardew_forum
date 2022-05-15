@@ -94,7 +94,7 @@ Notably these are:
 * In either pages to display topics or posts, you can read other usernames, but they do not currently link so that other users can see their profile.
 * On all pages to either make a post, make a topic, or edit a profile, the buttons default to displaying 'login' and 'signup' instead of the username and 'logout'.
 * On the page to edit a profile, submitting an image takes you back to the original page, without submitting either the biography or username fields.
-* It it currently possible to submit an empty username or biography. 
+* It is currently possible to submit an empty username or biography. 
 
 <br></br>
 
