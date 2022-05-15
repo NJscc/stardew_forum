@@ -124,7 +124,8 @@ ul {
     align-items: center;
 }
 
-.leftTitle {
+.leftTitle, .leftProfileTitle, .rightProfileTitle {
+    font-family: 'VT323', sans-serif;
     border-radius: 10px;
     border-style: solid;
     border-color: var(--dark-purple);
@@ -140,12 +141,12 @@ ul {
     text-align: center;
 }
 
-.leftList {
+.leftList, .profileItems, .rightProfileList {
     border-radius: 10px;
     border-style: solid;
     border-color: var(--dark-purple);
     display: flex;
-    background-color: var(--body-color);
+    background-color: var(--yellow-color);
     justify-content: center;
     align-items: center;
     width: 90%;
@@ -161,7 +162,7 @@ ul {
     text-decoration: none;
 }
 
-.homePosts, .topicsLeft {
+.homePosts, .topicsLeft, .profilePosts, #userBioView {
     justify-content: space-around;
     align-items: center;
     margin: auto;
@@ -239,7 +240,7 @@ ul {
 
 /*Topics Page---------------------------------------------------------------------------*/
 
-.topicPostTitle {
+.topicPostTitle, .profilePostTitle {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -413,6 +414,11 @@ ul {
 }
 
 
+
+.profilePostTitle {
+    margin-bottom: 0;
+}
+
 .displayProfileBlockRight {
     display: flex;
     flex-direction: column;
@@ -421,67 +427,46 @@ ul {
     font-family: 'VT323', sans-serif;
 }
 
-.leftProfileTitle {
-    display: flex;
-    background-color: var(--titles-color);
+.profilePosts {
     justify-content: center;
     align-items: center;
-    width: 90%;
-    margin-left: 15%;
-    font-size: 40px;
-    margin-bottom: 10px;
-    border-style: solid;
-    border-color: var(--dark-purple);
-    border-radius: 5px;
+    margin: 15px auto;
+    text-align: center;
 }
 
 .profileItems {
-    background-color: var(--body-color);
-    width: 90%;
-    margin-left: 15%;
-    min-height: 300px;
-    border-style: solid;
-    border-color: var(--dark-purple);
-    border-radius: 5px;
-    display: flex;
     flex-direction: column;
-    align-content: baseline;
 }
 
 .rightProfileTitle {
-    display: flex;
-    background-color: var(--titles-color);
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 0px;
-    font-size: 40px;
-    font-family: 'VT323', sans-serif;
-    border-style: solid;
-    border-color: var(--dark-purple);
-    border-radius: 5px;
+    margin-right: 10%;
 }
 
 .rightProfileList {
+    margin-right: 10%;
+    width: 70%;
+    flex-direction: column;
+}
+
+#userElements {
     display: flex;
-    background-color: var(--body-color);
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    min-height: 300px;
-    border-style: solid;
-    border-color: var(--dark-purple);
-    border-radius: 5px;
+    flex-direction: row;
+    width: 100%;
 }
 
 #userPicture {
     width: 100%;
-    max-width: 180px;
-    height: 100%;
-    max-height: 180px;
-    border-radius: 5%;
+    border-radius: 5px;
     justify-self: center;
     align-self: center;
+    color: var(--beige-color);
+    font-size: 20pt;
+}
+
+#userBioView {
+    justify-content: center;
+    margin: auto 20px;
+    width: 60%;
 }
 
 #picDiv {
@@ -489,40 +474,47 @@ ul {
     padding: 5px;
     border-style: solid;
     border-color: #151152;
-    border-width: 5px;
-    border-radius: 5%;
+    border-radius: 5px;
     display: flex;
-    max-width: 200px;
-    max-height: 200px;
+    width: 40%;
+    max-height: 250px;
+    max-width: 250px;
     margin: 5px;
     justify-self: center;
     align-self: center;
 }
 
 #userNameView {
+    width: 30%;
     font-size: 35px;
     border-style: solid;
     border-color: #151152;
-    border-width: 2px;
-    border-radius: 5%;
-    background-color:#151152;
-    color: #F3CF28;
-    min-width: 200px;
+    border-radius: 5px;
+    background-color: var(--beige-color);
+    color: var(--dark-purple);
     margin: 5px;
     text-align: center;
-}
 
-#editUserBtn {
-    width: fit-content;
-    height: 30px;
-    justify-self: flex-end;
-    margin: 10px;
 }
 
 #buttonBlock {
     display: flex;
-    align-content: flex-end;
-    justify-content: space-between;
+    width: 100%;
+    justify-content: space-around;
+}
+
+#editUserBtn {
+    width: 30%;
+    justify-self: flex-end;
+    margin: 10px;
+    font-size: 35pt;
+    background-color: var(--dark-purple);
+    border-radius: 5px;
+    color: var(--yellow-color);
+}
+
+#editUserBtn:hover {
+    color: var(--beige-color);
 }
 
 /*Login Page---------------------------------------------------------------------------------------------------------------*/
@@ -748,5 +740,43 @@ ul {
     .displayBlockProfile {
         width: 100%;
     }
+
+    /*display profile*/
+    .displayProfileBlockLeft {
+        width: 100%;
+    }
+
+    .leftProfileTitle, .profileItems {
+        width: 100%;
+        margin: 0 0 16px 0;
+    }
+
+    .leftProfileTitle, .profileItems {
+        width: 80%;
+    }
+
+    #userElements, #buttonBlock {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #userBioView, #userNameView, #editUserBtn {
+        width: 80%;
+        margin: 10px auto 10px;
+    }
+
+    .displayProfileBlockRight {
+        width: 100%;
+    }
+
+    .rightProfileTitle, .rightProfileList {
+        margin: 20px auto 16px;
+    }
+
+    .rightProfileTitle {
+        margin-top: 40px;
+    }
+
+    
 
 }
