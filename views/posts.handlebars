@@ -21,19 +21,21 @@
                     </div>
                 </div>
                 <div class="rightTopicList">
-                    <ul>
+                    <!--<ul>
                         <li>
-                        <div>
-                            <p>{{topic_text}}</p>
-                        </div>
+                        <div>-->
+                            <p id="topicBodyText">{{topic_text}}</p>
+                        <!--</div>-->
+                    
                         {{#each posts as |posts|}}
-                            <div class="topicList">
+                            <div class="topicListItem">
                                 <p class="username">{{posts.dataValues.user_id}}</p>
                                 <p class="postText">{{posts.dataValues.text}}</p>
                             </div>
-                        </li>
+                        <!--</li>-->
                         {{/each}}
-                    </ul>
+                    <!--</ul>-->
+                    
                 </div>
             </div>
         </div>

@@ -15,7 +15,7 @@ body {
     background: var(--bg-color);
 }
 main {
-    margin-bottom: 80px
+    margin-bottom: 90px;
 }
 /*Main styling - on every page-----------------------------------------------------------------*/
 /*Header styling*/
@@ -294,7 +294,7 @@ ul {
     justify-content: center;
 }
 
-.topicListItem p {
+.topicUserName, .username {
     width: 35%;
     text-align: left;
     justify-content: center;
@@ -305,13 +305,15 @@ ul {
     background-color: var(--beige-color);
     color: var(--dark-purple);
     font-size: 35pt;
+    padding-left: 10px;
 }
 
-.topicListItem a {
+.topicListItem a, .postText {
     width: 65%;
     text-align: center;
     justify-content: center;
     align-items: center;
+    text-align: center;
     background-color: var(--dark-purple);
     color: var(--yellow-color);
     margin: 0 25px;
@@ -332,6 +334,7 @@ ul {
     align-items: center;
 }
 
+/*
 .rightTopicList ul {
     width: 100%;
     height: 100%;
@@ -349,6 +352,7 @@ ul {
     justify-content: space-around;
 }
 
+
 .username {
     width: 30%;
     background-color: var(--titles-color);
@@ -356,7 +360,7 @@ ul {
     border-width: 2px;
     border-color: black;
 }
-
+*/
 /*
 .topicText {
     width: 70%;
@@ -367,12 +371,28 @@ ul {
     margin-right: 5%;
 }
 */
-/*Posts Page*/
+/*Posts Page----------------------------------------*/
 
-.rightPostTopicName {
+#topicBodyText {
+    width: 80%;
+    color: var(--yellow-color);
+    background-color: var(--dark-purple);
+    font-size: 35pt;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 25px;
 
 }
 
+.username {
+    height: 100%;
+}
+
+.postText {
+    font-size: 35pt;
+}
+
+/*
 .postText {
     width: 70%;
     background-color: var(--body-color);
@@ -381,7 +401,7 @@ ul {
     border-color: black;
     margin-right: 5%;
 }
-
+*/
 /*Profile Page---------------------------------------------------------------------------------------------------*/
 
 .displayProfileBlockLeft {
@@ -690,4 +710,43 @@ ul {
         width: 100%;
         margin-bottom: 10px;
     }
+
+    .topicTitleContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .rightTopicTitle {
+        width: 100%;
+        margin-top: 50px;
+        font-size: 40pt;
+    }
+
+    .topicListItem {
+        flex-direction: column;
+        margin-bottom: 40px;
+    }
+
+    .topicUserName , .username{
+        width: 80%;
+        margin-bottom: 18px;
+    }
+
+    #createTopic, #createPost {
+        width: 80%;
+    }
+
+    .topicListIem a{
+        width: 100%;
+    }
+
+    /*login page*/
+    .bodyLogin {
+        flex-direction: column;
+    }
+
+    .displayBlockProfile {
+        width: 100%;
+    }
+
 }
