@@ -31,11 +31,16 @@ router.get("/categories/:id", async (req,res) => {
 
     const loggedIn = req.session.user?true:false
     const hbtopic = await Topic.findAll({
+        include: [
+            User
+        ],
         where: {
             category_id: req.params.id
         }
     })
+    console.log("*******************")
         console.log(oneCategory)
+    console.log("^^^^^^^^^^^^^^^^^^^")
         console.log(hbtopic)
     res.render("topics",{
         category_title: oneCategory.dataValues.title,
