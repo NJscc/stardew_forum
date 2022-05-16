@@ -1,7 +1,5 @@
 # Stardew Forum Website
 
-Contributors: Ally Nostrand (Project Manager), Nicholas Jones (GitHub Manager), Seval Cakir, Aidan Hamann
-
 ## Overview  
 
 Our application is intended to allow a user to create or login
@@ -15,6 +13,15 @@ game with other users on the
 website. They can also place tags on their topics or posts 
 for sorting them, or to clarify their purpose.
 <br></br>
+
+## Table of Contents
+- [User Story](#user-story)
+- [Acceptance Criteria](#acceptance-criteria)
+- [Technologies Used](#technologies-used)
+- [Future Project Direction and Development](#future-project-direction-and-development)
+- [Link to Deployed Application and GitHub repository](#link-to-deployed-application-and-github-repository)
+- [Contributing](#contributing)
+- [Screenshots](#screenshots)
 
 ## User Story 
 
@@ -106,10 +113,18 @@ Notably these are:
 * Deployed link: https://stardew-forum-project.herokuapp.com/
 
 <br></br>
-    
- ## Screenshot
+
+## Contributing 
+
+Contributors: Ally Nostrand (Project Manager), Nicholas Jones (GitHub Manager), Seval Cakir, Aidan Hamann
+
+ <br></br>   
+ ## Screenshots
 
 A screenshot of our deployed application is shown below.
 
 !["Our website screenshot."](./assets/images/forum_image.png)
 
+Here is a screenshot of a user's profile page 
+
+<img src="./assets/images/stardew-forum-sc-1.png">
