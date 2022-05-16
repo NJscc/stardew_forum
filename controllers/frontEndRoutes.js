@@ -115,7 +115,7 @@ router.get("/profile/:id",(req,res)=>{
         let selfProfile = (req.session.user.id == userId);
         res.render("profile",{
             userBio: hbsData.user_bio,
-            userName: hbsData.username,
+            username: hbsData.username,
             selfProfile: selfProfile,
             loggedIn: loggedIn,
             imageUrl: hbsData.user_avatar,
