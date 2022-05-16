@@ -28,7 +28,7 @@ router.get("/:id", (req, res) => {
   router.post("/:id", (req, res) => {
     if(!req.session.user){
       return res.status(401).json({msg:"Please login to create a blog post!"})
-  }
+    }
     Post.create({
       text:req.body.text,
       user_id:req.session.user.id,
