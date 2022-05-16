@@ -1,0 +1,821 @@
+:root {
+    --bg-color:#30a6f5;
+    --titles-color:#F3CF28;
+    --body-color:#F3EA28;
+
+    --sky-blue:#59C9F1;
+    --dark-purple:#151152;
+    --red-color:#B52121;
+    --brown-color:#6B3710;
+    --beige-color:#DDA059;
+    --yellow-color:#FFD921;
+}
+
+body {
+    background: var(--bg-color);
+}
+main {
+    margin-bottom: 90px;
+}
+/*Main styling - on every page-----------------------------------------------------------------*/
+/*Header styling*/
+header {
+    display: flex;
+    background-color: var(--dark-purple);
+    border-bottom-style: solid;
+    border-bottom-width: 20px;
+    border-color: var(--yellow-color);
+    margin-bottom: 40px;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+/*link styling, main title*/
+
+#titleText {
+    justify-content: center;
+    align-self: center;
+    text-align: center;
+    display: flex;
+    font-family: 'VT323', sans-serif;
+    font-size: 80pt;
+    text-decoration: none;
+    width: 60%;
+    color: var(--yellow-color);
+}
+
+#titleText:hover {
+    color: var(--beige-color);
+}
+
+/*div containing header buttons*/
+#buttons {
+    display: flex;
+    align-self: center;
+    justify-content: space-around;
+    width: 40%;
+}
+
+.btnAnchor {
+    display: flex;
+    width: 38%;
+    height: 55%;
+    text-decoration: none;
+}
+
+.btnAnchor:visited, .btnAnchor:active {
+    color: var(--dark-purple);
+}
+
+.btnAnchor:hover {
+    color: var(--red-color);
+}
+
+.mainHeaderBtn {
+    background-color: var(--beige-color);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin: 20px;
+    margin:auto;
+    font-size: 45px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-family: 'VT323', sans-serif;
+}
+#signupBtn {
+    white-space: nowrap;
+}
+
+footer {
+    background-color: var(--dark-purple);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: var(--yellow-color);
+    text-align: center;
+    font-family: 'VT323', sans-serif;
+}
+
+footer p {
+    margin: auto;
+    font-size: 40px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/*Categories+Home Page*/
+.bodyContainer, .bodyLoginSignup{
+    display: flex;
+    font-family: 'VT323', sans-serif;
+}
+
+.displayBlockLeft {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    align-items: center;
+}
+
+.leftTitle, .leftProfileTitle, .rightProfileTitle {
+    font-family: 'VT323', sans-serif;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: var(--dark-purple);
+    display: flex;
+    background-color: var(--beige-color);
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin-left: 20%;
+    font-size: 50px;
+    margin-bottom: 16px;
+    padding: 15px 0;
+    text-align: center;
+}
+
+.leftList, .profileItems, .rightProfileList {
+    border-radius: 10px;
+    border-style: solid;
+    border-color: var(--dark-purple);
+    display: flex;
+    background-color: var(--yellow-color);
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin-left: 20%;
+}
+
+.homePostAnchor, .topicsLeftAnchor{
+    justify-content: center;
+    align-items: center;
+    margin: 0 15px;
+    text-align: center;
+    color: var(--dark-purple);
+    text-decoration: none;
+}
+
+.homePosts, .topicsLeft, .profilePosts, #userBioView, .inputLabels {
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    text-align: center;
+    width: 80%;
+    background-color: var(--beige-color);
+    border-style: solid;
+    border-color: var(--dark-purple);
+    border-radius: 5px;
+    font-size: 35px;
+}
+
+.displayBlockRight, .displayNewItem {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    align-items: center;
+}
+
+.rightTitle, .rightTopicTitle {
+    border-radius: 10px;
+    border-style: solid;
+    border-color: var(--dark-purple);
+    display: flex;
+    background-color: var(--beige-color);
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+    width: 80%;
+    margin-bottom: 16px;
+    font-size: 60pt;
+    text-align: center;
+}
+
+.rightList, .rightTopicList {
+    border-radius: 10px;
+    border-style: solid;
+    border-color: var(--dark-purple);
+    display: flex;
+    flex-direction: column;
+    background-color: var(--yellow-color);
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
+
+.category_list {
+    text-align: center;
+    width: 100%;
+}
+
+.homeCategoryAnchor {
+    width: 75%;
+    justify-content: center;
+    align-items: center;
+    margin: 0 25px;
+    text-align: center;
+    color: var(--dark-purple);
+    text-decoration: none;
+}
+
+.homeCategories {
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    padding: 25px 0;
+    width: 80%;
+    background-color: var(--beige-color);
+    border-style: solid;
+    border-color: var(--dark-purple);
+    border-radius: 5px;
+    font-size: 50px;
+}
+
+/*Topics Page---------------------------------------------------------------------------*/
+
+.topicPostTitle, .profilePostTitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 40px;
+    font-family: 'VT323', sans-serif;
+}
+.leftListWidth {
+    width: 75%;
+}
+
+.topicTitleContainer {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+}
+
+.rightTopicTitle {
+    width: 60%;
+}
+
+#createTopic, #createPost {
+    background-color: var(--dark-purple);
+    border-radius: 5px;
+    font-size: 45pt;
+    width: 40%;
+    margin: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 10px;
+    color: var(--yellow-color);
+}
+
+#createTopic:hover, #createPost:hover {
+    color: var(--beige-color);
+}
+
+.rightTopicList {
+    
+}
+
+.topicListItem {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 20px 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.topicUserName, .username {
+    width: 35%;
+    text-align: left;
+    justify-content: center;
+    border-style: solid;
+    border-color: var(--dark-purple);
+    margin: 0 25px;
+    border-radius: 5px;
+    background-color: var(--beige-color);
+    color: var(--dark-purple);
+    font-size: 35pt;
+    padding-left: 10px;
+}
+
+.topicListItem a, .postText {
+    width: 65%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--dark-purple);
+    color: var(--yellow-color);
+    margin: 0 25px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: var(--dark-purple);
+}
+
+.topicListItem a:hover {
+    color: var(--beige-color);
+}
+
+.topicListText {
+    font-size: 35pt;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+/*
+.rightTopicList ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.rightTopicList li {
+    width: 100%;
+    font-size: 40px;
+    margin: auto 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+.username {
+    width: 30%;
+    background-color: var(--titles-color);
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+}
+*/
+/*
+.topicText {
+    width: 70%;
+    background-color: var(--body-color);
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    margin-right: 5%;
+}
+*/
+/*Posts Page----------------------------------------*/
+
+#topicBodyText {
+    width: 80%;
+    color: var(--yellow-color);
+    background-color: var(--dark-purple);
+    font-size: 35pt;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 25px;
+
+}
+
+.username {
+    height: 100%;
+}
+
+.postText {
+    font-size: 35pt;
+}
+
+/*
+.postText {
+    width: 70%;
+    background-color: var(--body-color);
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    margin-right: 5%;
+}
+*/
+/*Profile Page---------------------------------------------------------------------------------------------------*/
+
+.displayProfileBlockLeft {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    align-items: center;
+    font-family: 'VT323', sans-serif;
+}
+
+
+
+.profilePostTitle {
+    margin-bottom: 0;
+}
+
+.displayProfileBlockRight {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    align-items: center;
+    font-family: 'VT323', sans-serif;
+}
+
+.profilePosts {
+    justify-content: center;
+    align-items: center;
+    margin: 15px auto;
+    text-align: center;
+}
+
+.profileItems {
+    flex-direction: column;
+}
+
+.rightProfileTitle {
+    margin-right: 10%;
+}
+
+.rightProfileList {
+    margin-right: 10%;
+    width: 70%;
+    flex-direction: column;
+}
+
+#userElements {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.tagImage {
+    width: 100%;
+    border-radius: 5px;
+    justify-self: center;
+    align-self: center;
+    color: var(--beige-color);
+    font-size: 20pt;
+}
+
+#userBioView {
+    justify-content: center;
+    margin: auto 20px;
+    width: 60%;
+}
+
+.displayImage {
+    background-color: #151152;
+    padding: 5px;
+    border-style: solid;
+    border-color: #151152;
+    border-radius: 5px;
+    display: flex;
+    width: 40%;
+    max-height: 250px;
+    max-width: 250px;
+    margin: 5px;
+    justify-self: center;
+    align-self: center;
+}
+
+#userNameView {
+    width: 30%;
+    font-size: 35px;
+    border-style: solid;
+    border-color: #151152;
+    border-radius: 5px;
+    background-color: var(--beige-color);
+    color: var(--dark-purple);
+    margin: 5px;
+    text-align: center;
+
+}
+
+#buttonBlock {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+#editUserBtn,  #profileDataBtn, #submitTopicBtn, #submitPostBtn {
+    width: 30%;
+    justify-self: flex-end;
+    margin: 10px;
+    font-size: 35pt;
+    background-color: var(--dark-purple);
+    border-radius: 5px;
+    color: var(--yellow-color);
+}
+
+#editUserBtn:hover, #profileDataBtn:hover {
+    color: var(--beige-color);
+}
+
+/*Login Page---------------------------------------------------------------------------------------------------------------*/
+
+/*titles too large, submission boxes too small, doesn't respond to screen size*/
+.bodyLogin {
+    display: flex;
+    flex-direction: row;
+}
+
+.displayBlockProfile {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+    font-family: 'VT323', sans-serif;
+}
+
+.topicProfileTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    margin-bottom: 10px;
+}
+
+.topicProfileTitle h2 {
+    font-size: 40pt;
+}
+
+.userPassBox {
+    border-radius: 10px;
+    border-style: solid;
+    border-color: var(--dark-purple);
+    display: flex;
+    margin-bottom: 100px;
+    flex-direction: column;
+    background-color: var(--body-color);
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+}
+
+.formFormat {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 75%;
+    margin: 30px 0;
+}
+
+.userPassLabel {
+    margin-top: 20px;
+    padding: 0 20px 0;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: var(--dark-purple);
+    color: var(--dark-purple);
+    font-size: 30pt;
+    background-color: var(--beige-color);
+    color: var(--dark-purple);
+}
+
+.userPassSubmit {
+    margin: 20px 0;
+    background-color: var(--dark-purple);
+    color: var(--yellow-color);
+    font-size: 30px;
+    text-align: center;
+    width: 85%;
+    border-radius: 5px;
+}
+
+.loginInputBox {
+    width: 90%;
+    border-style: solid;
+    border-color: var(--dark-purple);
+    border-radius: 5px;
+}
+
+
+/*Signup Page-----------------------------------------------------------------------------------------------------*/
+
+#submitBtn {
+    font-size: 35px;
+}
+
+/* add/edit profile page----------------------------------------------------------------------------------------------------*/
+.bodyLoginSignup {
+    justify-content: center;
+}
+
+#profileSubmission {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#upload_widget {
+    font-size: 35pt;
+    background-color: var(--dark-purple);
+    color: var(--beige-color);
+    width: 55%;
+    margin: 30px auto;
+}
+
+#submitBioBtn, #topicSubmission {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.inputLabels, .inputBoxes {
+    width: 65%;
+}
+
+.inputlabels {
+    margin-top: 20px;
+}
+
+.inputBoxes {
+    margin-bottom: 20px;
+    font-size: 20pt;
+}
+
+#profileDataBtn {
+    width: 50%;
+}
+
+/*create topic*/
+
+.displayNewItem {
+    width: 100%;
+}
+
+#topicTitle {
+    width: 30%;
+    height:40%;
+}
+
+#topicText {
+    width: 50%;
+    height:40%;
+}
+
+#newTopicTopLabel {
+    margin-top: 30px;
+}
+
+#topicTitle, #topicText {
+    width: 65%;
+}
+
+#submitTopicBtn {
+    width: 45%;
+}
+
+/*create post*/
+
+#postSubmission {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#postText {
+    width: 55%;
+}
+
+#submitPostLabel {
+    margin-top: 30px;
+}
+
+
+/*media query screen size adjustments*/
+
+@media screen and (max-width: 1054px) {
+    #titleText {
+        font-size: 40pt;
+    }
+    header {
+        flex-direction: column;
+    }
+    .mainHeaderBtn {
+        font-size: 30pt;
+        min-width: min-content;
+    }
+    .bodyContainer {
+        flex-direction: column;
+    }
+    .displayBlockLeft {
+        width: 90%;
+        margin-bottom: 15px;
+        align-self: center;
+    }
+    .displayBlockRight {
+        width: 100%;
+        align-self: center;
+    }
+    .leftTitle {
+        margin-left:auto;
+        margin-right:auto;
+    }
+    .leftList {
+        margin-left:auto;
+        margin-right:auto;
+    }
+    #buttons {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .topicTitleContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .rightTopicTitle {
+        width: 100%;
+        margin-top: 50px;
+        font-size: 40pt;
+    }
+
+    .topicListItem {
+        flex-direction: column;
+        margin-bottom: 40px;
+    }
+
+    .topicUserName , .username{
+        width: 80%;
+        margin-bottom: 18px;
+    }
+
+    #createTopic, #createPost {
+        width: 80%;
+    }
+
+    .topicListIem a{
+        width: 100%;
+    }
+
+    /*login page*/
+    .bodyLogin {
+        flex-direction: column;
+    }
+
+    .displayBlockProfile {
+        width: 100%;
+    }
+
+    /*display profile*/
+    .displayProfileBlockLeft {
+        width: 100%;
+    }
+
+    .leftProfileTitle, .profileItems {
+        width: 100%;
+        margin: 0 0 16px 0;
+    }
+
+    .leftProfileTitle, .profileItems {
+        width: 80%;
+    }
+
+    #userElements, #buttonBlock {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #userBioView, #userNameView, #editUserBtn {
+        width: 80%;
+        margin: 10px auto 10px;
+    }
+
+    .displayProfileBlockRight {
+        width: 100%;
+    }
+
+    .rightProfileTitle, .rightProfileList {
+        margin: 20px auto 16px;
+    }
+
+    .rightProfileTitle {
+        margin-top: 40px;
+    }
+
+    .rightTitle {
+        font-size: 40pt;
+    }
+
+    .inputLabels {
+        font-size: 28px;
+    }
+
+    
+
+}

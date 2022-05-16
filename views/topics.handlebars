@@ -1,0 +1,36 @@
+<main>
+        <!--Box to display topics, title of box, and button all need more styling - category list needs styling
+        Create topic button needs to be linked-->
+        <div class="bodyContainer">
+            <div class="displayBlockLeft">
+                <h2 class="leftTitle">Categories</h2>
+                <div class="leftList">
+                    <div class="leftListWidth">
+                        {{#each categories as |category|}}
+                        <a class="topicsLeftAnchor" href= "/categories/{{id}}"><h3 class="topicsLeft">{{category.title}}</h3></a>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+            <div class="displayBlockRight">
+                <div class="topicPostTitle">
+                    <div class="topicTitleContainer">
+                        <h2 class="rightTopicTitle">{{category_title}}</h2>
+                        <!--uncommented createTopic ID-->
+                        <a href="/submittopic/{{category_id}}" id="createTopic">Create</a>
+                   </div>
+                </div>
+                <div class="rightTopicList">
+                    {{#each topics as |topic|}}
+                        <div class="topicListItem">
+                            <p class="topicUserName">{{topic.user.dataValues.username}}</p>
+                            <!--To work, username MUST be displayed with a 'p' tag and use the 'class' class-->
+                            {{!-- <p class="username">{{user.username}}</p> --}}
+                            <a href="/topics/{{topic.dataValues.id}}"><h4 class="topicListText">{{topic.dataValues.title}}</h4></a>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    
+    </main>

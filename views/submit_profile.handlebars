@@ -1,0 +1,31 @@
+<main>
+
+    <!--remove welcome, center display boxes, login button should be diplaying username, signup button should show logout, 
+     interior of submission box needs polish -->
+    <!--<h2>Welcome, {{user.username}}</h2>-->
+    {{!-- {{#if loggedIn}}
+    {{/if}} --}}
+        <!---->
+        <div class="bodyLoginSignup">
+            <div class="displayBlockRight">
+                <div class="topicPostTitle">
+                    <h2 class="rightTitle">Update your Profile!</h2>
+                </div>
+                <div class="rightList">
+                    <!--Profile image and widget-->
+                    <div class="displayImage">
+                        <img class="tagImage" id="profileAvatar" src="" alt="Your profile image/avatar will be shown here!">
+                    </div>
+                    <button id="upload_widget" class="cloudinary-button">Upload your image!</button>
+                    <form id="submitBioBtn" action="">
+                        <label class="inputLabels" for="userNameInput">Please choose your name!</label><br>
+                        <input class="inputBoxes" type="text" id="userNameInput" name="userNameInput"><br>
+                        <label class="inputLabels" for="bioInput">Please submit your biography!</label><br>
+                        <input class="inputBoxes" type="text" id="bioInput" name="bioInput"><br>
+                        <!--<input type="submit" value="Submit" id="submitBioBtn">-->
+                        <button id="profileDataBtn">Submit</button>
+                    </form>
+                </div>
+            </div>
+    </main>
+    <script src="/js/profile_editor.js"></script>

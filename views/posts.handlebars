@@ -1,0 +1,44 @@
+<!--{{{body}}}, replaces main-->
+    <main>
+        <!--topic list needs styling - post list, post list title, and create post button all need styling
+        Topic button should link back to display-topic page-->
+        <div class="bodyContainer">
+            <div class="displayBlockLeft">
+                <h2 class="leftTitle">Topics</h2>
+                <div class="leftList">
+                    <div class="leftListWidth">
+                        {{#each topicalls as |topicall|}}
+                        <a href= "/topics/{{id}}" class="topicsLeftAnchor"><h3 class="topicsLeft">{{topicall.title}}</h3></a>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+            <div class="displayBlockRight">
+                <div class="topicPostTitle">
+                    <div class="topicTitleContainer">
+                        <h2 class="rightTopicTitle">{{topic_title}}</h2>
+                        <a href="/submitpost/{{topic_id}}" id="createPost">Create</a>
+                    </div>
+                </div>
+                <div class="rightTopicList">
+                    <!--<ul>
+                        <li>
+                        <div>-->
+                            <p id="topicBodyText">{{topic_text}}</p>
+                        <!--</div>-->
+                    
+                        {{#each posts as |posts|}}
+                            <div class="topicListItem">
+                                <p class="username">{{posts.user.dataValues.username}}</p>
+                                <p class="postText">{{posts.dataValues.text}}</p>
+                            </div>
+                        <!--</li>-->
+                        {{/each}}
+                    <!--</ul>-->
+                    
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/js/create_post.js"></script>
